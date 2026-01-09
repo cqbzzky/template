@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>cqbzzky&#39;s template</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="cqbzzky&#39;s template">
+<meta property="og:url" content="https://cqbzzky.github.io/template/index.html">
+<meta property="og:site_name" content="cqbzzky&#39;s template">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="cqbzzky">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/template/atom.xml" title="cqbzzky's template" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/template/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/template/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/template/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<!-- hexo injector head_end start --><style>/* 布局样式 */
+.hexo-tips-layout {
+    margin: 0.5rem 0;
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+    border: 1px solid;
+    border-left-width: 6px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+    min-width: 2rem;
+    height:auto;
+    overflow-x: auto; 
+    overflow-y: hidden; 
+}
+
+.hexo-tips-layout:hover {
+    transform: translateX(5px);
+}
+
+.hexo-tips-layout .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    font-size: clamp(2em, 2vw, 3em);
+    min-width: 2rem;
+    scale:1.5;
+    transition: transform 0.3s ease;
+}
+
+.hexo-tips-layout:hover .icon {
+    transform: scale(1.3);
+}
+
+.hexo-tips-layout .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.hexo-tips-layout:hover .content {
+    transform: translateX(3px);
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 768px) {
+    .hexo-tips-layout {
+        padding: 1rem;
+    }
+}
+
+/* 为每种类型的提示框添加主题样式 */
+[class^="tips-style-"] {
+    --tips-light-bg: #fff; /* 默认值 */
+    --tips-dark-bg: #333;  /* 默认值 */
+    --tips-border: #000;   /* 默认值 */
+}
+
+/* 主题样式规则 */
+[class^="hexo-tips-"] {
+    border-color: var(--tips-border);
+}
+
+[class^="hexo-tips-"] .icon {
+    color: var(--tips-border);
+}
+
+/* 1. 手动暗色模式优先 */
+html.dark [class^="hexo-tips-"] {
+    background-color: var(--tips-dark-bg);
+}
+
+/* 2. 系统暗色模式其次 */
+@media (prefers-color-scheme: dark) {
+    html:not(.light) [class^="hexo-tips-"] {
+        background-color: var(--tips-dark-bg);
+    }
+}
+
+/* 3. 亮色模式最后 */
+html:not(.dark) [class^="hexo-tips-"],
+html.light [class^="hexo-tips-"] {
+    background-color: var(--tips-light-bg);
+}
+        .tips-style-warning {
+          --tips-light-bg: #fff8e6;
+          --tips-dark-bg: #3d371f;
+          --tips-border: #ffb100;
+        }
+      
+        .tips-style-danger {
+          --tips-light-bg: #ffeded;
+          --tips-dark-bg: #3d2222;
+          --tips-border: #ff4545;
+        }
+      
+        .tips-style-tip {
+          --tips-light-bg: #e6f4ff;
+          --tips-dark-bg: #1f2f3d;
+          --tips-border: #409eff;
+        }
+      
+        .tips-style-mention {
+          --tips-light-bg: #f3e6ff;
+          --tips-dark-bg: #2f1f3d;
+          --tips-border: #b45fff;
+        }
+      
+        .tips-style-recommend {
+          --tips-light-bg: #e6ffe6;
+          --tips-dark-bg: #1f3d1f;
+          --tips-border: #67c23a;
+        }
+      
+        .tips-style-note {
+          --tips-light-bg: #f5f5f5;
+          --tips-dark-bg: #363636;
+          --tips-border: #9e9e9e;
+        }
+      
+        .tips-style-info {
+          --tips-light-bg: #e3f2fd;
+          --tips-dark-bg: #1f313d;
+          --tips-border: #03a9f4;
+        }
+      
+        .tips-style-success {
+          --tips-light-bg: #e8f5e9;
+          --tips-dark-bg: #1f3d24;
+          --tips-border: #4caf50;
+        }
+      
+        .tips-style-error {
+          --tips-light-bg: #ffebee;
+          --tips-dark-bg: #3d1f22;
+          --tips-border: #f44336;
+        }
+      
+        .tips-style-bug {
+          --tips-light-bg: #fce4ec;
+          --tips-dark-bg: #3d1f2a;
+          --tips-border: #e91e63;
+        }
+      
+        .tips-style-todo {
+          --tips-light-bg: #f3e5f5;
+          --tips-dark-bg: #2f1f3d;
+          --tips-border: #9c27b0;
+        }
+      
+        .tips-style-example {
+          --tips-light-bg: #fff3e0;
+          --tips-dark-bg: #3d311f;
+          --tips-border: #ff9800;
+        }
+      
+        .tips-style-quote {
+          --tips-light-bg: #eceff1;
+          --tips-dark-bg: #1f292d;
+          --tips-border: #607d8b;
+        }
+      
+        .tips-style-link {
+          --tips-light-bg: #e8eaf6;
+          --tips-dark-bg: #1f2137;
+          --tips-border: #3f51b5;
+        }
+      
+        .tips-style-code {
+          --tips-light-bg: #fafafa;
+          --tips-dark-bg: #363636;
+          --tips-border: #616161;
+        }
+      
+        .tips-style-update {
+          --tips-light-bg: #e0f2f1;
+          --tips-dark-bg: #1f3734;
+          --tips-border: #009688;
+        }
+      
+        .tips-style-star {
+          --tips-light-bg: #fffde7;
+          --tips-dark-bg: #3d3a1f;
+          --tips-border: #ffd700;
+        }
+      
+        .tips-style-time {
+          --tips-light-bg: #efebe9;
+          --tips-dark-bg: #332824;
+          --tips-border: #795548;
+        }
+      
+        .tips-style-critical {
+          --tips-light-bg: #f8d7da;
+          --tips-dark-bg: #721c24;
+          --tips-border: #dc3545;
+        }
+      
+        .tips-style-important {
+          --tips-light-bg: #fff3cd;
+          --tips-dark-bg: #664d03;
+          --tips-border: #fd7e14;
+        }
+      
+        .tips-style-caution {
+          --tips-light-bg: #fff3cd;
+          --tips-dark-bg: #664d03;
+          --tips-border: #ffc107;
+        }
+      
+        .tips-style-highlight {
+          --tips-light-bg: #d1ecf1;
+          --tips-dark-bg: #0a3622;
+          --tips-border: #20c997;
+        }
+      
+        .tips-style-reference {
+          --tips-light-bg: #e2e3ff;
+          --tips-dark-bg: #2d1b69;
+          --tips-border: #6610f2;
+        }
+      
+        .tips-style-summary {
+          --tips-light-bg: #d4edda;
+          --tips-dark-bg: #051b11;
+          --tips-border: #198754;
+        }
+      
+        .tips-style-detail {
+          --tips-light-bg: #cff4fc;
+          --tips-dark-bg: #055160;
+          --tips-border: #0dcaf0;
+        }
+      
+        .tips-style-formula {
+          --tips-light-bg: #e2e3ff;
+          --tips-dark-bg: #2d1b69;
+          --tips-border: #6f42c1;
+        }
+      
+        .tips-style-question {
+          --tips-light-bg: #cfe2ff;
+          --tips-dark-bg: #031633;
+          --tips-border: #0d6efd;
+        }
+      
+        .tips-style-answer {
+          --tips-light-bg: #d4edda;
+          --tips-dark-bg: #051b11;
+          --tips-border: #198754;
+        }
+      </style><!-- hexo injector head_end end --><meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/template/" id="logo">cqbzzky&#39;s template</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/template/">Home</a>
+        
+          <a class="main-nav-link" href="/template/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/template/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://cqbzzky.github.io/template"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/template/2026/01/09/hello-world/" class="article-date">
+  <time class="dt-published" datetime="2026-01-09T07:41:33.474Z" itemprop="datePublished">2026-01-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/template/2026/01/09/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://cqbzzky.github.io/template/2026/01/09/hello-world/" data-id="cuidFyadZDK8lxTEZ1iudsclW" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/template/archives/2026/01/">一月 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/template/2026/01/09/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 cqbzzky<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/template/" class="mobile-nav-link">Home</a>
+  
+    <a href="/template/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/template/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/template/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/template/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
