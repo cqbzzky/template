@@ -1,44 +1,281 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
+  <link rel='stylesheet' href='https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkai/dist/LXGWWenKai-Bold/result.css' />
+  <link rel='stylesheet' href='https://chinese-fonts-cdn.deno.dev/packages/jhlst/dist/%E4%BA%AC%E8%8F%AF%E8%80%81%E5%AE%8B%E4%BD%93v2_002/result.css' />  
   
-  
-  <title>【图论】霍尔（Hall）定理 | cqbzzky&#39;s template</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="定理内容 对于一个二分图，设左边的点集是 U，右边的点集是 V 。如果这个二分图有一个完美匹配，当且仅当对于任意一个子集 S ∈ U ，满足 |S| ≤ |N(S)| ，其中 N(S) 是 S 的邻域，即 V 中所有与 S 中的元素有连边的元素所组成的集合。 ## 定理证明 必要性 这个非常显然，因为如果邻域比自己还小，那必然有一个人无法匹配。 ### 充分性证明1 考虑反证法。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="【图论】霍尔（Hall）定理">
-<meta property="og:url" content="https://cqbzzky.github.io/template/2026/01/07/%E3%80%90%E5%9B%BE%E8%AE%BA%E3%80%91%E9%9C%8D%E5%B0%94%EF%BC%88Hall%EF%BC%89%E5%AE%9A%E7%90%86/index.html">
-<meta property="og:site_name" content="cqbzzky&#39;s template">
-<meta property="og:description" content="定理内容 对于一个二分图，设左边的点集是 U，右边的点集是 V 。如果这个二分图有一个完美匹配，当且仅当对于任意一个子集 S ∈ U ，满足 |S| ≤ |N(S)| ，其中 N(S) 是 S 的邻域，即 V 中所有与 S 中的元素有连边的元素所组成的集合。 ## 定理证明 必要性 这个非常显然，因为如果邻域比自己还小，那必然有一个人无法匹配。 ### 充分性证明1 考虑反证法。">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-01-07T06:18:42.000Z">
-<meta property="article:modified_time" content="2026-01-09T04:14:15.840Z">
-<meta property="article:author" content="cqbzzky">
-<meta property="article:tag" content="二分图">
-<meta property="article:tag" content="图论">
-<meta property="article:tag" content="霍尔定理">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/template/atom.xml" title="cqbzzky's template" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/template/favicon.png">
-  
-  
-  
-<link rel="stylesheet" href="/template/css/style.css">
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【图论】霍尔（Hall）定理 [ cqbzzky&#39;s template ]</title>
+
+  <link rel="icon" href="/template/img/favicon.ico">
+
+
+    <meta name="author" content="cqbzzky">
+
+
+
+
+
+  <link rel="alternate" href="/template/atom.xml " title="cqbzzky&#39;s template" type="application/atom+xml">
+
 
   
-    
-<link rel="stylesheet" href="/template/fancybox/jquery.fancybox.min.css">
-
+    <link rel="stylesheet" href="/template/css/main.css">
   
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
 
-<!-- hexo injector head_end start --><style>/* 布局样式 */
+
+<script defer>
+  document.addEventListener('visibilitychange', function () {
+  if (document.visibilityState == 'hidden') {
+      normal_title = document.title;
+      document.title = '点一下';
+  } else document.title = normal_title;
+});
+
+</script>
+  <body data-theme="light" class="notransition">
+    <script defer>
+      const body = document.body;
+      const data = body.getAttribute("data-theme");
+      const initTheme = (state) => {
+        if (state === "dark") {
+          body.setAttribute("data-theme", "dark");
+        } else if (state === "light") {
+          body.removeAttribute("data-theme");
+        } else {
+          localStorage.setItem("theme", data);
+        }
+      };
+   
+      initTheme(localStorage.getItem("theme"));
+      
+      setTimeout(() => body.classList.remove("notransition"), 75);
+    </script>
+  <div class="navbar" role="navigation">
+    <nav class="menu">
+      <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+      <label for="menu-trigger">
+        <span class="menu-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 512 512"
+          >
+            <path
+              d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"
+            />
+          </svg>
+        </span>
+      </label>
+      <a id="mode">
+        <svg
+          class="mode-sunny"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 512 512"
+        >
+          <title>LIGHT</title>
+          <line
+            x1="256"
+            y1="48"
+            x2="256"
+            y2="96"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="256"
+            y1="416"
+            x2="256"
+            y2="464"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="108.92"
+            x2="369.14"
+            y2="142.86"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="369.14"
+            x2="108.92"
+            y2="403.08"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="464"
+            y1="256"
+            x2="416"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="96"
+            y1="256"
+            x2="48"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="403.08"
+            x2="369.14"
+            y2="369.14"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="142.86"
+            x2="108.92"
+            y2="108.92"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <circle
+            cx="256"
+            cy="256"
+            r="80"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+        </svg>
+        <svg
+          class="mode-moon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 512 512"
+        >
+          <title>DARK</title>
+          <line
+            x1="256"
+            y1="48"
+            x2="256"
+            y2="96"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="256"
+            y1="416"
+            x2="256"
+            y2="464"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="108.92"
+            x2="369.14"
+            y2="142.86"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="369.14"
+            x2="108.92"
+            y2="403.08"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="464"
+            y1="256"
+            x2="416"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="96"
+            y1="256"
+            x2="48"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="403.08"
+            x2="369.14"
+            y2="369.14"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="142.86"
+            x2="108.92"
+            y2="108.92"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <circle
+            cx="256"
+            cy="256"
+            r="80"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+        </svg>
+      </a>
+      <div class="trigger">
+        <div class="trigger-container">
+          
+            
+            
+            
+            
+            
+            
+            <a class="menu-link " href="/"> 主页</a>
+          
+            
+            
+            
+            
+            
+            
+            <a class="menu-link " href="/tags/"> 标签</a>
+          
+            
+            
+            
+            
+            
+            
+            <a class="menu-link " href="/categories/"> 类别</a>
+          
+            
+            
+            
+            
+            
+            
+            <a class="menu-link " href="/archives/"> 档案馆</a>
+          
+            
+            
+            
+            
+            
+            
+            <a class="menu-link " href="/about/"> 关于</a>
+          
+        </div>
+      </div>
+    </nav>
+  </div>
+  <button id="toTopBtn"><i class="fa-solid fa-hand-point-up " ></i></button>
+<button id="toggleButton"><i class="fa-solid fa-chart-bar " ></i></button>
+<div id="overlay" class="overlay">
+  <div class="content">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E7%90%86%E5%86%85%E5%AE%B9"><span class="toc-text">定理内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E7%90%86%E8%AF%81%E6%98%8E"><span class="toc-text">定理证明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%85%E8%A6%81%E6%80%A7"><span class="toc-text">必要性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%85%E5%88%86%E6%80%A7%E8%AF%81%E6%98%8E1"><span class="toc-text">充分性证明1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%85%E5%88%86%E6%80%A7%E8%AF%81%E6%98%8E2"><span class="toc-text">充分性证明2</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%83%85%E5%86%B5-1"><span class="toc-text">情况 1</span></a></li></ol></li></ol></li></ol>
+    <button id="closeButton"><i class="fa-solid fa-circle-xmark"></i></button>
+  </div>
+</div>
+<div class="wrapper post">
+  <head>
+    <!-- 引入 Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- hexo injector head_end start --><style>/* 布局样式 */
 .hexo-tips-layout {
     margin: 0.5rem 0;
     padding: 0.5rem 1.5rem;
@@ -310,509 +547,147 @@ window.MathJax = {
 <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
   <!-- hexo injector head_end end --><meta name="generator" content="Hexo 8.1.1"></head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/template/" id="logo">cqbzzky&#39;s template</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
-        
-          <a class="main-nav-link" href="/template/">Home</a>
-        
-          <a class="main-nav-link" href="/template/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/template/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://cqbzzky.github.io/template"></form>
-      </div>
-    </div>
-  </div>
-</header>
 
-      <div class="outer">
-        <section id="main"><article id="post-【图论】霍尔（Hall）定理" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/template/2026/01/07/%E3%80%90%E5%9B%BE%E8%AE%BA%E3%80%91%E9%9C%8D%E5%B0%94%EF%BC%88Hall%EF%BC%89%E5%AE%9A%E7%90%86/" class="article-date">
-  <time class="dt-published" datetime="2026-01-07T06:18:42.000Z" itemprop="datePublished">2026-01-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/template/categories/%E7%AE%97%E6%B3%95/">算法</a>►<a class="article-category-link" href="/template/categories/%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/">图论</a>►<a class="article-category-link" href="/template/categories/%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E4%BA%8C%E5%88%86%E5%9B%BE/">二分图</a>►<a class="article-category-link" href="/template/categories/%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E4%BA%8C%E5%88%86%E5%9B%BE/%E9%9C%8D%E5%B0%94%E5%AE%9A%E7%90%86/">霍尔定理</a>
-  </div>
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+  <main class="page-content" aria-label="Content">
+      <header class="header">
         
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      【图论】霍尔（Hall）定理
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="定理内容">定理内容</h2>
-<p>对于一个二分图，设左边的点集是 <span
-class="math inline"><em>U</em></span>，右边的点集是 <span
-class="math inline"><em>V</em></span>
-。如果这个二分图有一个完美匹配，当且仅当对于任意一个子集 <span
-class="math inline"><em>S</em> ∈ <em>U</em></span> ，满足 <span
-class="math inline">|<em>S</em>| ≤ |<em>N</em>(<em>S</em>)|</span>
-，其中 <span class="math inline"><em>N</em>(<em>S</em>)</span> 是 <span
-class="math inline"><em>S</em></span> 的邻域，即 <span
-class="math inline"><em>V</em></span> 中所有与 <span
-class="math inline"><em>S</em></span> 中的元素有连边的元素所组成的集合。
-## 定理证明</p>
-<h3 id="必要性">必要性</h3>
-<p>这个非常显然，因为如果邻域比自己还小，那必然有一个人无法匹配。 ###
-充分性证明1 考虑反证法。</p>
-<p><img
-src="https://i-blog.csdnimg.cn/img_convert/c904e43a6327d38f62fbf3311c2a1132.png" /></p>
-<p>如图，这张图满足 Hall
-定理，但是现在没有完美匹配，左右都剩下了一些节点，即 <span
-class="math inline">1</span> 和 <span class="math inline">4</span>。</p>
-<p>对于左边剩下的节点 <span
-class="math inline">1</span>，将其与它的任意一条边对面的点 <span
-class="math inline">2</span> 做匹配（显然是有的，否则集合 <span
-class="math inline">{1}</span>不满足 Hall
-定理）。如果对面已经被选过了，比如 <span class="math inline">2</span> 被
-<span class="math inline">3</span> 选过了，那就让 和它匹配的点 <span
-class="math inline">3</span>
-视为没有匹配，去找另外的匹配（显然是有另外的匹配的，否则集合 <span
-class="math inline">{1, 3}</span> 不满足 Hall 定理）。</p>
+          <div class="tags">
+            <a href="/template/tags/%E5%9B%BE%E8%AE%BA/" class="tag"># 图论</a><a href="/template/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/" class="tag"># 二分图</a><a href="/template/tags/%E9%9C%8D%E5%B0%94%E5%AE%9A%E7%90%86/" class="tag"># 霍尔定理</a>
+          </div>
+        
+        <h1 class="header-title" itemprop="headline">【图论】霍尔（Hall）定理</h1>
+          <div class="post-meta">
+            最后更新: <time>1月 09, 2026</time>
+            作者: <span itemprop="author">
+              <span itemprop="name">cqbzzky</span>
+            </span>
+            字数: <span class="post-count">1.6k</span>
+            预计阅读时间: <span class="post-count">6min</span> 
+          </div>       
+        </header>
+          <div class="page-content"><h2 id="定理内容"><a href="#定理内容" class="headerlink" title="定理内容"></a>定理内容</h2><p>对于一个二分图，设左边的点集是 $U$，右边的点集是 $V$ 。如果这个二分图有一个完美匹配，当且仅当对于任意一个子集 $S \in U$ ，满足 $|S| \leq |N(S)|$ ，其中 $N(S)$ 是 $S$ 的邻域，即 $V$ 中所有与 $S$ 中的元素有连边的元素所组成的集合。</p>
+<h2 id="定理证明"><a href="#定理证明" class="headerlink" title="定理证明"></a>定理证明</h2><h3 id="必要性"><a href="#必要性" class="headerlink" title="必要性"></a>必要性</h3><p>这个非常显然，因为如果邻域比自己还小，那必然有一个人无法匹配。</p>
+<h3 id="充分性证明1"><a href="#充分性证明1" class="headerlink" title="充分性证明1"></a>充分性证明1</h3><p>考虑反证法。</p>
+<p><img src="https://i-blog.csdnimg.cn/img_convert/c904e43a6327d38f62fbf3311c2a1132.png"></p>
+<p>如图，这张图满足 Hall 定理，但是现在没有完美匹配，左右都剩下了一些节点，即 $1$ 和 $4$。</p>
+<p>对于左边剩下的节点 $1$，将其与它的任意一条边对面的点 $2$ 做匹配（显然是有的，否则集合 ${1}$不满足 Hall 定理）。如果对面已经被选过了，比如 $2$ 被 $3$ 选过了，那就让 和它匹配的点 $3$  视为没有匹配，去找另外的匹配（显然是有另外的匹配的，否则集合 ${1,3}$ 不满足 Hall 定理）。</p>
 <p>以此类推，最后一定可以找到完美匹配，与假设矛盾！</p>
-<p>综上所述，Hall 定理是二分图有完美匹配的充要条件。 ### 充分性证明2</p>
-<p>考虑归纳证明。</p>
-<p>显然，当 <span class="math inline">|<em>U</em>| = 1</span>
-时，充分性存在。</p>
-<p>当 <span class="math inline">|<em>U</em>| = <em>k</em></span> 且所有
-<span class="math inline">|<em>U</em>| &lt; <em>k</em></span>
-的充分性都存在时，尝试证明 <span class="math inline"><em>U</em></span>
-的充分性存在。 #### 情况 1</p>
-<p><strong>假设</strong>：对每个非空真子集 <span
-class="math inline"><em>S</em> ⊂ <em>U</em></span>（即 <span
-class="math inline">⌀ ≠ <em>S</em> ⊊ <em>U</em></span> ），都有 <span
-class="math display">|<em>N</em>(<em>S</em>)| &gt; |<em>S</em>|.</span>
-<strong>步骤</strong>：</p>
-<ol type="1">
-<li>任取 <span class="math inline"><em>u</em> ∈ <em>U</em></span>。由
-Hall 条件（对单点集 <span class="math inline">{<em>u</em>}</span>
-成立），有 <span
-class="math inline">|<em>N</em>({<em>u</em>})| ≥ 1</span>，所以存在
-<span class="math inline"><em>v</em> ∈ <em>V</em></span> 与 <span
-class="math inline"><em>u</em></span> 相邻。</li>
-<li>从原图 <span class="math inline"><em>G</em></span> 中删去 <span
-class="math inline"><em>u</em>, <em>v</em></span>
-及所有关联的边，得到新图 <span
-class="math inline"><em>G</em><sup>′</sup> = (<em>U</em><sup>′</sup>, <em>V</em><sup>′</sup>, <em>E</em><sup>′</sup>)</span>，其中<br />
-<span
-class="math inline"><em>U</em><sup>′</sup> = <em>U</em> \ {<em>u</em>}</span>，<br />
-<span
-class="math inline"><em>V</em><sup>′</sup> = <em>V</em> \ {<em>v</em>}</span>。</li>
-<li>检查 <span class="math inline"><em>G</em><sup>′</sup></span>
-是否满足 Hall 条件：<br />
-对任意 <span
-class="math inline"><em>S</em><sup>′</sup> ⊆ <em>U</em><sup>′</sup></span>（注意
-<span
-class="math inline">|<em>S</em><sup>′</sup>| ≤ <em>k</em></span>）：
-<ul>
-<li>在原图 <span class="math inline"><em>G</em></span> 中，由于 <span
-class="math inline"><em>S</em><sup>′</sup></span> 是真子集（因为 <span
-class="math inline"><em>S</em><sup>′</sup></span> 不包含 <span
-class="math inline"><em>u</em></span> 且 <span
-class="math inline"><em>S</em><sup>′</sup> ⊆ <em>U</em><sup>′</sup> ⊊ <em>U</em></span>），所以由情况
-1 的条件 <span
-class="math inline">|<em>N</em><sub><em>G</em></sub>(<em>S</em><sup>′</sup>)| &gt; |<em>S</em><sup>′</sup>|</span>。</li>
-<li>在 <span class="math inline"><em>G</em><sup>′</sup></span> 中，邻域
-<span
-class="math inline"><em>N</em><sub><em>G</em><sup>′</sup></sub>(<em>S</em><sup>′</sup>) = <em>N</em><sub><em>G</em></sub>(<em>S</em><sup>′</sup>) \ {<em>v</em>}</span>。</li>
-<li>分两种子情形：
-<ul>
-<li>若 <span
-class="math inline"><em>v</em> ∈ <em>N</em><sub><em>G</em></sub>(<em>S</em><sup>′</sup>)</span>，则<br />
-<span
-class="math inline">|<em>N</em><sub><em>G</em><sup>′</sup></sub>(<em>S</em><sup>′</sup>)| = |<em>N</em><sub><em>G</em></sub>(<em>S</em><sup>′</sup>)|−1 ≥ |<em>S</em><sup>′</sup>|</span>（因为
-<span
-class="math inline">|<em>N</em><sub><em>G</em></sub>(<em>S</em><sup>′</sup>)| ≥ |<em>S</em><sup>′</sup>|+1</span>）。</li>
-<li>若 <span
-class="math inline"><em>v</em> ∉ <em>N</em><sub><em>G</em></sub>(<em>S</em><sup>′</sup>)</span>，则<br />
-<span
-class="math inline">|<em>N</em><sub><em>G</em><sup>′</sup></sub>(<em>S</em><sup>′</sup>)| = |<em>N</em><sub><em>G</em></sub>(<em>S</em><sup>′</sup>)| ≥ |<em>S</em><sup>′</sup>|+1 &gt; |<em>S</em><sup>′</sup>|</span>。</li>
-</ul></li>
-<li>综上，总有 <span
-class="math inline">|<em>N</em><sub><em>G</em><sup>′</sup></sub>(<em>S</em><sup>′</sup>)| ≥ |<em>S</em><sup>′</sup>|</span>。</li>
-</ul></li>
-<li>由于 <span
-class="math inline">|<em>U</em><sup>′</sup>| = <em>k</em></span>，由归纳假设，<span
-class="math inline"><em>G</em><sup>′</sup></span> 存在匹配 <span
-class="math inline"><em>M</em><sup>′</sup></span> 覆盖 <span
-class="math inline"><em>U</em><sup>′</sup></span>。</li>
-<li>将边 <span class="math inline">(<em>u</em>, <em>v</em>)</span> 加入
-<span class="math inline"><em>M</em><sup>′</sup></span>，得到 <span
-class="math inline"><em>G</em></span> 的一个匹配覆盖全部 <span
-class="math inline"><em>U</em></span>。</li>
+<p>综上所述，Hall 定理是二分图有完美匹配的充要条件。</p>
+<h3 id="充分性证明2"><a href="#充分性证明2" class="headerlink" title="充分性证明2"></a>充分性证明2</h3><p>考虑归纳证明。</p>
+<p>显然，当 $|U| &#x3D; 1$ 时，充分性存在。</p>
+<p>当 $|U| &#x3D; k$ 且所有 $|U| &lt; k$ 的充分性都存在时，尝试证明 $U$ 的充分性存在。</p>
+<h4 id="情况-1"><a href="#情况-1" class="headerlink" title="情况 1"></a>情况 1</h4><p><strong>假设</strong>：对每个非空真子集 $S \subset U$（即 $\varnothing \neq S \subsetneq U$ ），都有<br>$$<br>|N(S)| &gt; |S|.<br>$$<br><strong>步骤</strong>：</p>
+<ol>
+<li>任取 $u \in U$。由 Hall 条件（对单点集 ${u}$ 成立），有 $|N({u})| \ge 1$，所以存在 $v \in V$ 与 $u$ 相邻。</li>
+<li>从原图 $G$ 中删去 $u, v$ 及所有关联的边，得到新图 $G’ &#x3D; (U’, V’, E’)$，其中<br>$U’ &#x3D; U \setminus {u}$，<br>$V’ &#x3D; V \setminus {v}$。</li>
+<li>检查 $G’$ 是否满足 Hall 条件：<br>对任意 $S’ \subseteq U’$（注意 $|S’| \le k$）：<ul>
+<li>在原图 $G$ 中，由于 $S’$ 是真子集（因为 $S’$ 不包含 $u$ 且 $S’ \subseteq U’ \subsetneq U$），所以由情况 1 的条件 $|N_G(S’)| &gt; |S’|$。</li>
+<li>在 $G’$ 中，邻域 $N_{G’}(S’) &#x3D; N_G(S’) \setminus {v}$。</li>
+<li>分两种子情形：<ul>
+<li>若 $v \in N_G(S’)$，则<br>$|N_{G’}(S’)| &#x3D; |N_G(S’)| - 1 \ge |S’|$（因为 $|N_G(S’)| \ge |S’|+1$）。</li>
+<li>若 $v \notin N_G(S’)$，则<br>$|N_{G’}(S’)| &#x3D; |N_G(S’)| \ge |S’|+1 &gt; |S’|$。</li>
+</ul>
+</li>
+<li>综上，总有 $|N_{G’}(S’)| \ge |S’|$。</li>
+</ul>
+</li>
+<li>由于 $|U’| &#x3D; k$，由归纳假设，$G’$ 存在匹配 $M’$ 覆盖 $U’$。</li>
+<li>将边 $(u, v)$ 加入 $M’$，得到 $G$ 的一个匹配覆盖全部 $U$。</li>
 </ol>
 <p><strong>情况 1 证毕。</strong></p>
 <p><strong>情况 2</strong></p>
-<p><strong>假设</strong>：存在某个非空真子集 <span
-class="math inline"><em>S</em><sub>0</sub> ⊂ <em>U</em></span>（即 <span
-class="math inline">⌀ ≠ <em>S</em><sub>0</sub> ⊊ <em>U</em></span>）使得<br />
-<span
-class="math display">|<em>N</em>(<em>S</em><sub>0</sub>)| = |<em>S</em><sub>0</sub>|.</span></p>
+<p><strong>假设</strong>：存在某个非空真子集 $S_0 \subset U$（即 $\varnothing \neq S_0 \subsetneq U$）使得<br>$$<br>|N(S_0)| &#x3D; |S_0|.<br>$$</p>
 <p><strong>步骤 1：将图分成两部分</strong></p>
-<p>由 Hall 条件，<span
-class="math inline">|<em>N</em>(<em>S</em><sub>0</sub>)| ≥ |<em>S</em><sub>0</sub>|</span>，已知相等，所以
-我们可以先考虑子图 <span
-class="math inline"><em>G</em><sub>1</sub> = (<em>S</em><sub>0</sub>, <em>N</em>(<em>S</em><sub>0</sub>), <em>E</em><sub>1</sub>)</span>，其中
-<span class="math inline"><em>E</em><sub>1</sub></span> 是 <span
-class="math inline"><em>E</em></span> 中两端分别在 <span
-class="math inline"><em>S</em><sub>0</sub></span> 与 <span
-class="math inline"><em>N</em>(<em>S</em><sub>0</sub>)</span>
-中的边。</p>
-<p>对任意 <span
-class="math inline"><em>T</em> ⊆ <em>S</em><sub>0</sub></span>，在 <span
-class="math inline"><em>G</em></span> 中 <span
-class="math inline"><em>N</em><sub><em>G</em></sub>(<em>T</em>) ⊆ <em>N</em><sub><em>G</em></sub>(<em>S</em><sub>0</sub>)</span>（不一定等于，但至少邻域在
-<span class="math inline"><em>V</em></span> 中）。<br />
-在 <span class="math inline"><em>G</em><sub>1</sub></span> 中，<span
-class="math inline"><em>T</em></span> 的邻域仍是 <span
-class="math inline"><em>N</em><sub><em>G</em></sub>(<em>T</em>)</span>（因为如果
-<span
-class="math inline"><em>v</em> ∈ <em>N</em><sub><em>G</em></sub>(<em>T</em>)</span>，则
-<span class="math inline"><em>v</em></span> 与某个 <span
-class="math inline"><em>u</em> ∈ <em>T</em> ⊆ <em>S</em><sub>0</sub></span>
-相邻，因此 <span
-class="math inline"><em>v</em> ∈ <em>N</em><sub><em>G</em></sub>(<em>S</em><sub>0</sub>)</span>，所以
-<span
-class="math inline"><em>N</em><sub><em>G</em></sub>(<em>T</em>) ⊆ <em>N</em>(<em>S</em><sub>0</sub>)</span>。）</p>
-<p>因此 <span class="math inline"><em>G</em><sub>1</sub></span> 中 <span
-class="math inline"><em>T</em></span> 的邻域和 <span
-class="math inline"><em>G</em></span> 中相同，即 <span
-class="math inline"><em>N</em><sub><em>G</em><sub>1</sub></sub>(<em>T</em>) = <em>N</em><sub><em>G</em></sub>(<em>T</em>)</span>。</p>
-<p>于是对任意 <span
-class="math inline"><em>T</em> ⊆ <em>S</em><sub>0</sub></span>： <span
-class="math display">|<em>N</em><sub><em>G</em><sub>1</sub></sub>(<em>T</em>)| = |<em>N</em><sub><em>G</em></sub>(<em>T</em>)| ≥ |<em>T</em>|</span>
-由 <span class="math inline"><em>G</em></span> 的 Hall 条件得出。所以
-<span class="math inline"><em>G</em><sub>1</sub></span> 也满足 Hall
-条件。</p>
-<p>并且 <span
-class="math inline">|<em>N</em><sub><em>G</em><sub>1</sub></sub>(<em>S</em><sub>0</sub>)| = |<em>S</em><sub>0</sub>|</span>
-仍然成立。</p>
-<p><strong>步骤 2：对 <span
-class="math inline"><em>G</em><sub>1</sub></span>
-使用归纳假设</strong></p>
-<p>因为 <span
-class="math inline">1 ≤ |<em>S</em><sub>0</sub>| &lt; |<em>U</em>|</span>，由归纳假设（假设定理对点数较小的
-<span class="math inline"><em>U</em></span> 成立），图 <span
-class="math inline"><em>G</em><sub>1</sub></span> 存在饱和 $ S_0 $
-的匹配 <span class="math inline"><em>M</em><sub>1</sub></span>，匹配大小
-<span
-class="math inline">|<em>M</em><sub>1</sub>| = |<em>S</em><sub>0</sub>|</span>。</p>
-<p><span class="math inline"><em>M</em><sub>1</sub></span> 用了 <span
-class="math inline"><em>N</em>(<em>S</em><sub>0</sub>)</span>
-的所有点了吗？注意 <span
-class="math inline">|<em>M</em><sub>1</sub>| = |<em>S</em><sub>0</sub>| = |<em>N</em>(<em>S</em><sub>0</sub>)|</span>，所以
-<span class="math inline"><em>M</em><sub>1</sub></span> 饱和了 <span
-class="math inline"><em>S</em><sub>0</sub></span> 和 <span
-class="math inline"><em>N</em>(<em>S</em><sub>0</sub>)</span>（即匹配边从
-<span class="math inline"><em>S</em><sub>0</sub></span> 到 <span
-class="math inline"><em>N</em>(<em>S</em><sub>0</sub>)</span>
-双射）。</p>
-<p>因此，<span class="math inline"><em>M</em><sub>1</sub></span> 占用了
-<span class="math inline"><em>N</em>(<em>S</em><sub>0</sub>)</span>
-的所有点与 <span class="math inline"><em>S</em><sub>0</sub></span>
-的所有点。</p>
-<p><strong>步骤 3：考虑剩余子图 <span
-class="math inline"><em>G</em><sub>2</sub></span></strong></p>
-<p>令 <span
-class="math inline"><em>U</em><sup>′</sup> = <em>U</em> \ <em>S</em><sub>0</sub></span>，<br />
-<span
-class="math inline"><em>V</em><sup>′</sup> = <em>V</em> \ <em>N</em>(<em>S</em><sub>0</sub>)</span>，<br />
-<span class="math inline"><em>E</em><sub>2</sub></span> 为连接 <span
-class="math inline"><em>U</em><sup>′</sup></span> 与 <span
-class="math inline"><em>V</em><sup>′</sup></span> 的边（以及 <span
-class="math inline"><em>U</em><sup>′</sup></span> 与 <span
-class="math inline"><em>N</em>(<em>S</em><sub>0</sub>)</span>
-的边我们不考虑吗？这需要小心：原图可能还有 <span
-class="math inline"><em>U</em><sup>′</sup></span> 到 <span
-class="math inline"><em>N</em>(<em>S</em><sub>0</sub>)</span>
-的边，但这些边不能用在 <span
-class="math inline"><em>G</em><sub>2</sub></span> 的匹配中，因为 <span
-class="math inline"><em>N</em>(<em>S</em><sub>0</sub>)</span> 在 <span
-class="math inline"><em>G</em><sub>1</sub></span> 中已经全被 <span
-class="math inline"><em>M</em><sub>1</sub></span> 占用了。我们定义 <span
-class="math inline"><em>G</em><sub>2</sub> = (<em>U</em><sup>′</sup>, <em>V</em><sup>′</sup>, <em>E</em><sup>′</sup>)</span>，其中
-<span
-class="math inline"><em>E</em><sup>′</sup> = {(<em>u</em>, <em>v</em>) ∈ <em>E</em> ∣ <em>u</em> ∈ <em>U</em><sup>′</sup>, <em>v</em> ∈ <em>V</em><sup>′</sup>}</span>。</p>
-<p>我们要证：<span class="math inline"><em>G</em><sub>2</sub></span>
-满足 Hall 条件。</p>
-<p>取任意 <span
-class="math inline"><em>S</em> ⊆ <em>U</em><sup>′</sup></span>，考虑它在原图中的邻域
-<span
-class="math inline"><em>N</em><sub><em>G</em></sub>(<em>S</em>)</span>。</p>
-<p><strong>引理：<span class="math inline"><em>G</em><sub>2</sub></span>
-满足 Hall 条件</strong></p>
-<p><strong>证明</strong>：取任意 <span
-class="math inline"><em>S</em> ⊆ <em>U</em><sup>′</sup></span>，考虑原图
-<span class="math inline"><em>G</em></span> 中的 <span
-class="math inline"><em>T</em> = <em>S</em><sub>0</sub> ∪ <em>S</em></span>。</p>
-<p>我们想证：对任意 <span
-class="math inline"><em>S</em> ⊆ <em>U</em><sup>′</sup></span>，在子图
-<span class="math inline"><em>G</em><sub>2</sub></span> 中 <span
-class="math inline">|<em>N</em><sub><em>G</em><sub>2</sub></sub>(<em>S</em>)| ≥ |<em>S</em>|</span>。</p>
-<p><span
-class="math inline"><em>N</em><sub><em>G</em><sub>2</sub></sub>(<em>S</em>)</span>
-定义为在 <span class="math inline"><em>G</em><sub>2</sub></span> 中
-<span class="math inline"><em>S</em></span> 的邻域，即 <span
-class="math inline"><em>V</em><sup>′</sup></span> 中与 <span
-class="math inline"><em>S</em></span> 有边相连的点。</p>
-<p>在 <span class="math inline"><em>G</em></span> 中，<span
-class="math inline"><em>S</em></span> 的邻域 <span
-class="math inline"><em>N</em><sub><em>G</em></sub>(<em>S</em>)</span>
-可能有一部分落在 <span
-class="math inline"><em>N</em><sub><em>G</em></sub>(<em>S</em><sub>0</sub>)</span>
-中，另一部分落在 <span class="math inline"><em>V</em><sup>′</sup></span>
-中。</p>
-<p>设： <span
-class="math display"><em>A</em> = <em>N</em><sub><em>G</em></sub>(<em>S</em>) ∩ <em>N</em><sub><em>G</em></sub>(<em>S</em><sub>0</sub>),  <em>B</em> = <em>N</em><sub><em>G</em></sub>(<em>S</em>) ∩ <em>V</em><sup>′</sup></span>
-显然： <span
-class="math display"><em>N</em><sub><em>G</em></sub>(<em>S</em>) = <em>A</em> ∪ <em>B</em>,  |<em>N</em><sub><em>G</em></sub>(<em>S</em>)| = |<em>A</em>|+|<em>B</em>|</span>
-且 <span
-class="math inline"><em>B</em> = <em>N</em><sub><em>G</em><sub>2</sub></sub>(<em>S</em>)</span>。</p>
-<p>考虑 <span
-class="math inline"><em>T</em> = <em>S</em><sub>0</sub> ∪ <em>S</em></span>（这是
-<span class="math inline"><em>U</em></span> 的子集），<br />
-<span
-class="math inline"><em>N</em><sub><em>G</em></sub>(<em>T</em>) = <em>N</em><sub><em>G</em></sub>(<em>S</em><sub>0</sub>) ∪ <em>N</em><sub><em>G</em></sub>(<em>S</em>)</span>（一般并集，可能有交）。</p>
-<p>于是： <span
-class="math display">|<em>N</em><sub><em>G</em></sub>(<em>T</em>)| = |<em>N</em><sub><em>G</em></sub>(<em>S</em><sub>0</sub>)|+|<em>N</em><sub><em>G</em></sub>(<em>S</em>)|−|<em>N</em><sub><em>G</em></sub>(<em>S</em><sub>0</sub>) ∩ <em>N</em><sub><em>G</em></sub>(<em>S</em>)|</span>
-而 <span
-class="math inline"><em>N</em><sub><em>G</em></sub>(<em>S</em><sub>0</sub>) ∩ <em>N</em><sub><em>G</em></sub>(<em>S</em>) = <em>A</em></span>，所以：
-<span
-class="math display">|<em>N</em><sub><em>G</em></sub>(<em>T</em>)| = |<em>N</em><sub><em>G</em></sub>(<em>S</em><sub>0</sub>)|+(|<em>A</em>|+|<em>B</em>|) − |<em>A</em>| = |<em>N</em><sub><em>G</em></sub>(<em>S</em><sub>0</sub>)|+|<em>B</em>|.</span>
-由 <span
-class="math inline">|<em>N</em><sub><em>G</em></sub>(<em>S</em><sub>0</sub>)| = |<em>S</em><sub>0</sub>|</span>，得：
-<span
-class="math display">|<em>N</em><sub><em>G</em></sub>(<em>T</em>)| = |<em>S</em><sub>0</sub>|+|<em>B</em>|.</span>
-结合 <span
-class="math inline">|<em>N</em><sub><em>G</em></sub>(<em>T</em>)| ≥ |<em>S</em><sub>0</sub>|+|<em>S</em>|</span>，有
-<span class="math inline">|<em>B</em>| ≥ |<em>S</em>|</span>，即： <span
-class="math display">|<em>N</em><sub><em>G</em><sub>2</sub></sub>(<em>S</em>)| ≥ |<em>S</em>|.</span></p>
-<p>这正是 <span class="math inline"><em>G</em><sub>2</sub></span> 的
-Hall 条件。</p>
-<p><strong>步骤 4：对 <span
-class="math inline"><em>G</em><sub>2</sub></span>
-使用归纳假设</strong></p>
-<p>由于 <span
-class="math inline">|<em>U</em><sup>′</sup>| &lt; |<em>U</em>|</span>，根据归纳假设，<span
-class="math inline"><em>G</em><sub>2</sub></span> 存在饱和 <span
-class="math inline"><em>U</em><sup>′</sup></span> 的匹配 <span
-class="math inline"><em>M</em><sub>2</sub></span>，匹配大小为 <span
-class="math inline">|<em>U</em><sup>′</sup>|</span>。</p>
+<p>由 Hall 条件，$|N(S_0)| \ge |S_0|$，已知相等，所以 我们可以先考虑子图 $G_1 &#x3D; (S_0, N(S_0), E_1)$，其中 $E_1$ 是 $E$ 中两端分别在 $S_0$ 与 $N(S_0)$ 中的边。</p>
+<p>对任意 $T \subseteq S_0$，在 $G$ 中 $N_G(T) \subseteq N_G(S_0)$（不一定等于，但至少邻域在 $V$ 中）。<br>在 $G_1$ 中，$T$ 的邻域仍是 $N_G(T)$（因为如果 $v \in N_G(T)$，则 $v$ 与某个 $u \in T \subseteq S_0$ 相邻，因此 $v \in N_G(S_0)$，所以 $N_G(T) \subseteq N(S_0)$。）</p>
+<p>因此 $G_1$ 中 $T$ 的邻域和 $G$ 中相同，即 $N_{G_1}(T) &#x3D; N_G(T)$。</p>
+<p>于是对任意 $T \subseteq S_0$：<br>$$<br>|N_{G_1}(T)| &#x3D; |N_G(T)| \ge |T|<br>$$<br>由 $G$ 的 Hall 条件得出。所以 $G_1$ 也满足 Hall 条件。</p>
+<p>并且 $|N_{G_1}(S_0)| &#x3D; |S_0|$ 仍然成立。</p>
+<p><strong>步骤 2：对 $G_1$ 使用归纳假设</strong></p>
+<p>因为 $1 \le |S_0| &lt; |U|$，由归纳假设（假设定理对点数较小的 $U$ 成立），图 $G_1$ 存在饱和 $ S_0 $ 的匹配 $M_1$，匹配大小 $|M_1| &#x3D; |S_0|$。</p>
+<p>$M_1$ 用了 $N(S_0)$ 的所有点了吗？注意 $|M_1| &#x3D; |S_0| &#x3D; |N(S_0)|$，所以 $M_1$ 饱和了 $S_0$ 和 $N(S_0)$（即匹配边从 $S_0$ 到 $N(S_0)$ 双射）。</p>
+<p>因此，$M_1$ 占用了 $N(S_0)$ 的所有点与 $S_0$ 的所有点。</p>
+<p><strong>步骤 3：考虑剩余子图 $G_2$</strong></p>
+<p>令 $U’ &#x3D; U \setminus S_0$，<br>$V’ &#x3D; V \setminus N(S_0)$，<br>$E_2$ 为连接 $U’$ 与 $V’$ 的边（以及 $U’$ 与 $N(S_0)$ 的边我们不考虑吗？这需要小心：原图可能还有 $U’$ 到 $N(S_0)$ 的边，但这些边不能用在 $G_2$ 的匹配中，因为 $N(S_0)$ 在 $G_1$ 中已经全被 $M_1$ 占用了。我们定义 $G_2 &#x3D; (U’, V’, E’)$，其中 $E’ &#x3D; { (u, v) \in E \mid u \in U’, v \in V’ }$。</p>
+<p>我们要证：$G_2$ 满足 Hall 条件。</p>
+<p>取任意 $S \subseteq U’$，考虑它在原图中的邻域 $N_G(S)$。</p>
+<p><strong>引理：$G_2$ 满足 Hall 条件</strong></p>
+<p><strong>证明</strong>：取任意 $S \subseteq U’$，考虑原图 $G$ 中的 $T &#x3D; S_0 \cup S$。</p>
+<p>我们想证：对任意 $S \subseteq U’$，在子图 $G_2$ 中 $|N_{G_2}(S)| \ge |S|$。</p>
+<p>$N_{G_2}(S)$ 定义为在 $G_2$ 中 $S$ 的邻域，即 $V’$ 中与 $S$ 有边相连的点。</p>
+<p>在 $G$ 中，$S$ 的邻域 $N_G(S)$ 可能有一部分落在 $N_G(S_0)$ 中，另一部分落在 $V’$ 中。</p>
+<p>设：<br>$$<br>A &#x3D; N_G(S) \cap N_G(S_0), \quad B &#x3D; N_G(S) \cap V’<br>$$<br>显然：<br>$$<br>N_G(S) &#x3D; A \cup B, \quad |N_G(S)| &#x3D; |A| + |B|<br>$$<br>且 $B &#x3D; N_{G_2}(S)$。</p>
+<p>考虑 $T &#x3D; S_0 \cup S$（这是 $U$ 的子集），<br>$N_G(T) &#x3D; N_G(S_0) \cup N_G(S)$（一般并集，可能有交）。</p>
+<p>于是：<br>$$<br>|N_G(T)| &#x3D; |N_G(S_0)| + |N_G(S)| - |N_G(S_0) \cap N_G(S)|<br>$$<br>而 $N_G(S_0) \cap N_G(S) &#x3D; A$，所以：<br>$$<br>|N_G(T)| &#x3D; |N_G(S_0)| + (|A| + |B|) - |A| &#x3D; |N_G(S_0)| + |B|.<br>$$<br>由 $|N_G(S_0)| &#x3D; |S_0|$，得：<br>$$<br>|N_G(T)| &#x3D; |S_0| + |B|.<br>$$<br>结合 $|N_G(T)| \ge |S_0| + |S|$，有 $|B| \ge |S|$，即：<br>$$<br>|N_{G_2}(S)| \ge |S|.<br>$$</p>
+<p>这正是 $G_2$ 的 Hall 条件。</p>
+<p><strong>步骤 4：对 $G_2$ 使用归纳假设</strong></p>
+<p>由于 $|U’| &lt; |U|$，根据归纳假设，$G_2$ 存在饱和 $U’$ 的匹配 $M_2$，匹配大小为 $|U’|$。</p>
 <p><strong>步骤 5：合并匹配</strong></p>
-<p>匹配 <span class="math inline"><em>M</em><sub>1</sub></span>（从
-<span class="math inline"><em>S</em><sub>0</sub></span> 到 <span
-class="math inline"><em>N</em>(<em>S</em><sub>0</sub>)</span>）与匹配
-<span class="math inline"><em>M</em><sub>2</sub></span>（从 <span
-class="math inline"><em>U</em><sup>′</sup></span> 到 <span
-class="math inline"><em>V</em><sup>′</sup></span>）没有公共顶点，因为：</p>
+<p>匹配 $M_1$（从 $S_0$ 到 $N(S_0)$）与匹配 $M_2$（从 $U’$ 到 $V’$）没有公共顶点，因为：</p>
 <ul>
-<li><span class="math inline"><em>M</em><sub>1</sub></span> 占用 <span
-class="math inline"><em>N</em>(<em>S</em><sub>0</sub>)</span>
-全部，<span class="math inline"><em>M</em><sub>2</sub></span> 只占用
-<span
-class="math inline"><em>V</em><sup>′</sup> = <em>V</em> \ <em>N</em>(<em>S</em><sub>0</sub>)</span>；</li>
-<li><span class="math inline"><em>M</em><sub>1</sub></span> 占用 <span
-class="math inline"><em>S</em><sub>0</sub></span>，<span
-class="math inline"><em>M</em><sub>2</sub></span> 占用 <span
-class="math inline"><em>U</em><sup>′</sup></span>。</li>
+<li>$M_1$ 占用 $N(S_0)$ 全部，$M_2$ 只占用 $V’ &#x3D; V \setminus N(S_0)$；</li>
+<li>$M_1$ 占用 $S_0$，$M_2$ 占用 $U’$。</li>
 </ul>
-<p>因此 <span
-class="math inline"><em>M</em> = <em>M</em><sub>1</sub> ∪ <em>M</em><sub>2</sub></span>
-是 <span class="math inline"><em>G</em></span> 的一个匹配，且覆盖 <span
-class="math inline"><em>U</em> = <em>S</em><sub>0</sub> ∪ <em>U</em><sup>′</sup></span>。</p>
-<p>匹配大小 $ |M| = |S_0| + |U’| = |U| $，所以它是饱和 <span
-class="math inline"><em>U</em></span> 的匹配。</p>
-<p>情况 2 在 Hall 条件成立且存在 <span
-class="math inline"><em>S</em><sub>0</sub></span> 使 <span
-class="math inline">|<em>N</em>(<em>S</em><sub>0</sub>)| = |<em>S</em><sub>0</sub>|</span>
-时，可通过分解为两个更小的子图分别构造匹配并合并，从而得到整体的饱和
-<span class="math inline"><em>U</em></span> 的匹配，归纳完成。</p>
+<p>因此 $M &#x3D; M_1 \cup M_2$ 是 $G$ 的一个匹配，且覆盖 $U &#x3D; S_0 \cup U’$。</p>
+<p>匹配大小 $ |M| &#x3D; |S_0| + |U’| &#x3D; |U| $，所以它是饱和 $U$ 的匹配。</p>
+<p>情况 2 在 Hall 条件成立且存在 $S_0$ 使 $|N(S_0)| &#x3D; |S_0|$ 时，可通过分解为两个更小的子图分别构造匹配并合并，从而得到整体的饱和 $U$ 的匹配，归纳完成。</p>
 <p><strong>情况 2 证毕。</strong></p>
 <p>综上所述，Hall 定理是二分图有完美匹配的充要条件。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://cqbzzky.github.io/template/2026/01/07/%E3%80%90%E5%9B%BE%E8%AE%BA%E3%80%91%E9%9C%8D%E5%B0%94%EF%BC%88Hall%EF%BC%89%E5%AE%9A%E7%90%86/" data-id="cuid4zjx0cycejXi6X9yvcJUG" data-title="【图论】霍尔（Hall）定理" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/template/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/" rel="tag">二分图</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/template/tags/%E5%9B%BE%E8%AE%BA/" rel="tag">图论</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/template/tags/%E9%9C%8D%E5%B0%94%E5%AE%9A%E7%90%86/" rel="tag">霍尔定理</a></li></ul>
-
-    </footer>
-  </div>
-  
+</div>          
+          <nav class="post-nav">
     
-<nav id="article-nav">
-  
-    <a href="/template/2026/01/07/%E3%80%90%E6%95%B0%E5%AD%A6%E3%80%91%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%85%A5%E9%97%A8/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">前一篇</strong>
-      <div class="article-nav-title">
-        
-          【数学】线性代数入门
+    <a class="post-nav-item post-nav-prev" href="/template/2026/01/07/%E3%80%90%E6%95%B0%E5%AD%A6%E3%80%91%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%85%A5%E9%97%A8/">
+      <div class="nav-arrow">&lt;&nbsp;NEWER</div>
+      <span class="post-title">【数学】线性代数入门</span>
+    </a>
+    
+    
+    <a class="post-nav-item post-nav-next" href="/template/2026/01/07/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%91%E7%AC%9B%E5%8D%A1%E5%B0%94%E6%A0%91/">
+      <div class="nav-arrow">OLDER&nbsp;&gt;</div>
+      <span class="post-title">【数据结构】笛卡尔树</span>
+    </a>
+    
+  </nav>
+
+   </main>
+</div>
+
+  <footer class="footer">
+    <small class="footer_copyright">
+      <div id="bottom-inner">
+        © Site by cqbzzky<br>
+        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a> &
+        <a target="_blank" rel="noopener" href="https://github.com/g0dmao/hexo-theme-Klise-enhanced">Klise-enhanced</a>
+        <br>
+        <a target="_blank" rel="noopener" href="https://chinese-font.netlify.app/zh-cn/fonts/jhlst/%E4%BA%AC%E8%8F%AF%E8%80%81%E5%AE%8B%E4%BD%93v2_002">京華老宋体</a> & <a target="_blank" rel="noopener" href="https://chinese-font.netlify.app/zh-cn/">中文网字支持计划</a>
+        <br>
+        始于2025.
         
       </div>
-    </a>
+    </small>
+  </footer>
   
   
-    <a href="/template/2026/01/07/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%91%E7%AC%9B%E5%8D%A1%E5%B0%94%E6%A0%91/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">后一篇</strong>
-      <div class="article-nav-title">【数据结构】笛卡尔树</div>
-    </a>
-  
-</nav>
 
-  
-</article>
-
-
-</section>
-        
-          <aside id="sidebar">
-  
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">分类</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/template/categories/%E6%95%B0%E5%AD%A6/">数学</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/template/categories/%E6%95%B0%E5%AD%A6/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/template/categories/%E7%AE%97%E6%B3%95/">算法</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/template/categories/%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/">图论</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/template/categories/%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E4%BA%8C%E5%88%86%E5%9B%BE/">二分图</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/template/categories/%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E4%BA%8C%E5%88%86%E5%9B%BE/%E9%9C%8D%E5%B0%94%E5%AE%9A%E7%90%86/">霍尔定理</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/template/categories/%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E6%A0%91/">树</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/template/categories/%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E6%A0%91/%E6%A0%91%E4%B8%8A%E5%90%AF%E5%8F%91%E5%BC%8F%E5%90%88%E5%B9%B6/">树上启发式合并</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/template/categories/%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E7%BD%91%E7%BB%9C%E6%B5%81/">网络流</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/template/categories/%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E7%BD%91%E7%BB%9C%E6%B5%81/%E6%9C%80%E5%A4%A7%E6%B5%81/">最大流</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/template/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/template/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%B3%E8%A1%A1%E6%A0%91/">平衡树</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/template/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%B3%E8%A1%A1%E6%A0%91/%E7%AC%9B%E5%8D%A1%E5%B0%94%E6%A0%91/">笛卡尔树</a></li></ul></li></ul></li></ul></li></ul>
-    </div>
-  </div>
-
-
-  
+      <script src="/js/main.js"></script>
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/template/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/" rel="tag">二分图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/template/tags/%E5%88%86%E6%B2%BB/" rel="tag">分治</a></li><li class="tag-list-item"><a class="tag-list-link" href="/template/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E5%90%88%E5%B9%B6/" rel="tag">启发式合并</a></li><li class="tag-list-item"><a class="tag-list-link" href="/template/tags/%E5%9B%BE%E8%AE%BA/" rel="tag">图论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/template/tags/%E5%B9%B3%E8%A1%A1%E6%A0%91/" rel="tag">平衡树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/template/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/template/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/template/tags/%E6%9C%80%E5%A4%A7%E6%B5%81/" rel="tag">最大流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/template/tags/%E6%A0%91/" rel="tag">树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/template/tags/%E7%AC%9B%E5%8D%A1%E5%B0%94%E6%A0%91/" rel="tag">笛卡尔树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/template/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag">线性代数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/template/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/" rel="tag">网络流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/template/tags/%E9%9C%8D%E5%B0%94%E5%AE%9A%E7%90%86/" rel="tag">霍尔定理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/template/tags/%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">高级数据结构</a></li></ul>
-    </div>
-  </div>
-
-
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget tagcloud">
-      <a href="/template/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/" style="font-size: 10px;">二分图</a> <a href="/template/tags/%E5%88%86%E6%B2%BB/" style="font-size: 10px;">分治</a> <a href="/template/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E5%90%88%E5%B9%B6/" style="font-size: 10px;">启发式合并</a> <a href="/template/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 20px;">图论</a> <a href="/template/tags/%E5%B9%B3%E8%A1%A1%E6%A0%91/" style="font-size: 10px;">平衡树</a> <a href="/template/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 10px;">数学</a> <a href="/template/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 15px;">数据结构</a> <a href="/template/tags/%E6%9C%80%E5%A4%A7%E6%B5%81/" style="font-size: 10px;">最大流</a> <a href="/template/tags/%E6%A0%91/" style="font-size: 10px;">树</a> <a href="/template/tags/%E7%AC%9B%E5%8D%A1%E5%B0%94%E6%A0%91/" style="font-size: 10px;">笛卡尔树</a> <a href="/template/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 10px;">线性代数</a> <a href="/template/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/" style="font-size: 10px;">网络流</a> <a href="/template/tags/%E9%9C%8D%E5%B0%94%E5%AE%9A%E7%90%86/" style="font-size: 10px;">霍尔定理</a> <a href="/template/tags/%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">高级数据结构</a>
-    </div>
-  </div>
+  <script>
+    window.FPConfig = {
+      delay: 0,
+      ignoreKeywords: [],
+      maxRPS: 3,
+      hoverDelay: 50,
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+  document.body.classList.add('loaded');
+});
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/template/archives/2026/01/">一月 2026</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/template/2026/01/07/%E3%80%90%E6%95%B0%E5%AD%A6%E3%80%91%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%85%A5%E9%97%A8/">【数学】线性代数入门</a>
-          </li>
-        
-          <li>
-            <a href="/template/2026/01/07/%E3%80%90%E5%9B%BE%E8%AE%BA%E3%80%91%E9%9C%8D%E5%B0%94%EF%BC%88Hall%EF%BC%89%E5%AE%9A%E7%90%86/">【图论】霍尔（Hall）定理</a>
-          </li>
-        
-          <li>
-            <a href="/template/2026/01/07/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%91%E7%AC%9B%E5%8D%A1%E5%B0%94%E6%A0%91/">【数据结构】笛卡尔树</a>
-          </li>
-        
-          <li>
-            <a href="/template/2026/01/07/%E3%80%90%E5%9B%BE%E8%AE%BA%E3%80%91%E6%A0%91%E4%B8%8A%E5%90%AF%E5%8F%91%E5%BC%8F%E5%90%88%E5%B9%B6%EF%BC%88DSU-on-tree%EF%BC%89/">【图论】树上启发式合并（DSU on tree）</a>
-          </li>
-        
-          <li>
-            <a href="/template/2026/01/07/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%91CDQ%E5%88%86%E6%B2%BB/">【数据结构】CDQ分治</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2026 cqbzzky<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/template/" class="mobile-nav-link">Home</a>
-  
-    <a href="/template/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/template/js/jquery-3.6.4.min.js"></script>
-
-
-
-  
-<script src="/template/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/template/js/script.js"></script>
-
-
-
-
-
-  </div>
+  </script>
 </body>
 </html>
