@@ -285,7 +285,23 @@ html.light [class^="hexo-tips-"] {
           --tips-dark-bg: #051b11;
           --tips-border: #198754;
         }
-      </style><!-- hexo injector head_end end --><meta name="generator" content="Hexo 8.1.1"></head>
+      </style>
+<script>
+window.MathJax = {
+  tex: {
+    packages: {'[+]': ['amsmath', 'amssymb']}, // 矩阵/符号核心包
+    inlineMath: [['$', '$']], // 行内公式：$公式$
+    displayMath: [['$$', '$$']], // 块级公式：$$公式$$
+    processEscapes: true // 支持转义$，避免误识别
+  },
+  chtml: {
+    scale: 0.9, // 行内公式缩小到90%，避免占多行
+    matchFontHeight: false // 禁止公式撑高行高
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <!-- hexo injector head_end end --><meta name="generator" content="Hexo 8.1.1"></head>
 
 <body>
   <div id="container">
@@ -325,12 +341,16 @@ html.light [class^="hexo-tips-"] {
       <div class="outer">
         <section id="main">
   
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-【数学】线性代数入门" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/template/2026/01/09/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2026-01-09T07:41:33.474Z" itemprop="datePublished">2026-01-09</time>
+    <a href="/template/2026/01/07/%E3%80%90%E6%95%B0%E5%AD%A6%E3%80%91%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%85%A5%E9%97%A8/" class="article-date">
+  <time class="dt-published" datetime="2026-01-07T06:22:12.000Z" itemprop="datePublished">2026-01-07</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/template/categories/%E6%95%B0%E5%AD%A6/">数学</a>►<a class="article-category-link" href="/template/categories/%E6%95%B0%E5%AD%A6/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -339,7 +359,7 @@ html.light [class^="hexo-tips-"] {
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/template/2026/01/09/hello-world/">Hello World</a>
+      <a class="p-name article-title" href="/template/2026/01/07/%E3%80%90%E6%95%B0%E5%AD%A6%E3%80%91%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%85%A5%E9%97%A8/">【数学】线性代数入门</a>
     </h1>
   
 
@@ -347,27 +367,1159 @@ html.light [class^="hexo-tips-"] {
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+        <h1 id="向量与矩阵基础笔记">向量与矩阵基础笔记</h1>
+<h2 id="向量">向量</h2>
+<h3 id="向量的定义">向量的定义</h3>
+<p>向量有三种定义，不同领域的理解各有侧重：</p>
+<ol type="1">
+<li><p><strong>物理角度</strong>：就是坐标系里能随便移动的箭头，核心是表示一个方向，和起点位置没关系。</p></li>
+<li><p><strong>信息学角度</strong>：把它看成一组数据，这组数据可以对应到坐标系上的一个箭头。</p></li>
+<li><p><strong>数学角度</strong>：线性代数里主要用这个定义，特指<strong>起点在原点的箭头</strong>，坐标和终点的位置一一对应。</p></li>
+</ol>
+<h3 id="向量加法">向量加法</h3>
+<p>我们可以把向量想象成一个“移动指令”，意思是“沿着这个方向走这么远”，向量加法就是把这些指令按顺序执行。</p>
+<figure>
+<img src="https://cdn.luogu.com.cn/upload/image_hosting/hwmfb8nt.png"
+alt="向量加法示例" />
+<figcaption aria-hidden="true">向量加法示例</figcaption>
+</figure>
+<p>就比如计算 <span
+class="math inline">$\begin{bmatrix}1\\2\end{bmatrix}+\begin{bmatrix}3\\-1\end{bmatrix}$</span>，可以这么理解：</p>
+<ol type="1">
+<li><p>先从原点 <span class="math inline">(0, 0)</span>
+出发，按第一个向量的指令走到 <span class="math inline">(1, 2)</span>
+；</p></li>
+<li><p>再从 <span class="math inline">(1, 2)</span>
+出发，按第二个向量的指令接着走，最后就到了 <span
+class="math inline">(1 + 3, 2 + (−1)) = (4, 1)</span> 。</p></li>
+</ol>
+<p>其实本质就是把两个向量的对应分量分别相加，特别好记。</p>
+<h3 id="向量数乘">向量数乘</h3>
+<p>大家可以打开画图工具试试：画一个箭头，来回拖动鼠标调整它的长短，要是把箭头缩到原点另一边，方向还会反过来——这就是向量数乘的直观样子。</p>
+<figure>
+<img src="https://cdn.luogu.com.cn/upload/image_hosting/iaj37h8h.png"
+alt="向量数乘示例" />
+<figcaption aria-hidden="true">向量数乘示例</figcaption>
+</figure>
+<p>向量数乘的形式是 <span
+class="math inline"><em>k</em> × <em>u⃗</em></span>，说白了就是把向量
+<span class="math inline"><em>u⃗</em></span> 整体放大或缩小 <span
+class="math inline"><em>k</em></span> 倍： <span
+class="math inline"><em>k</em></span> 是正数就和原方向一样，负数就反向，
+<span class="math inline"><em>k</em> = 0</span> 就变成零向量了。</p>
+<h3 id="张成的空间">张成的空间</h3>
+<p>先看一个式子 <span
+class="math inline"><em>x</em> × <em>u⃗</em> + <em>y</em> × <em>v⃗</em></span>
+（ <span class="math inline"><em>x</em></span> 和 <span
+class="math inline"><em>y</em></span>
+可以是任意实数），我们想知道这个式子能表示多少种向量，这些向量的集合就叫
+<span class="math inline"><em>u⃗</em></span> 和 <span
+class="math inline"><em>v⃗</em></span> <strong>张成的空间</strong>。</p>
+<p>先拿二维情况举例：</p>
+<ul>
+<li><p>要是随便找两个不共线的向量 <span
+class="math inline"><em>u⃗</em></span> 和 <span
+class="math inline"><em>v⃗</em></span>
+，我们甚至可以把它们当成新的坐标系的“坐标轴”，很明显能表示出所有二维向量；</p></li>
+<li><p>但如果两个向量方向一样（共线），那它们能表示的向量就只能在同一条直线上，空间就退化成了一条线；</p></li>
+<li><p>更特殊的是，要是两个都是零向量，那它们只能表示原点这一个点。</p></li>
+</ul>
+<p>这里还要提个概念：能张成完整空间（不退化）的向量组叫<strong>线性无关组</strong>，反之就是<strong>线性相关</strong>。而且一个向量组能张成的空间维度，就等于它里面最多有多少个线性无关的向量。</p>
+<h2 id="矩阵">矩阵</h2>
+<h3 id="线性变换">线性变换</h3>
+<p>先说说“变换”是什么意思：其实就是把一个向量变成另一个向量的规则，要是把这个规则用到所有向量上，就是对整个坐标系的变换。</p>
+<p>变换有很多种，比如把坐标系揉成一团也算变换，但线性代数只研究<strong>线性变换</strong>，它有两个很简单的要求：</p>
+<ol type="1">
+<li><p>变换后原点还在原来的位置，不会跑偏；</p></li>
+<li><p>变换后所有直线还是直线，平行的线依然平行——说白了就是只能旋转、翻转或者像压平行四边形那样挤压，不能扭曲。</p></li>
+</ol>
+<p>那怎么表示一个线性变换呢？我们可以盯着坐标系的“基础箭头”（也就是基向量
+<span
+class="math inline">$\vec{i}=\begin{bmatrix}1\\0\end{bmatrix}$</span> 和
+<span
+class="math inline">$\vec{j}=\begin{bmatrix}0\\1\end{bmatrix}$</span>
+）来看：</p>
+<p>比如变换后 <span class="math inline"><em>i⃗</em></span> 变成了 <span
+class="math inline">$\begin{bmatrix}2\\3\end{bmatrix}$</span> ， <span
+class="math inline"><em>j⃗</em></span> 变成了 <span
+class="math inline">$\begin{bmatrix}1\\-1\end{bmatrix}$</span>
+，那这个变换就可以写成矩阵 <span class="math inline">$\begin{bmatrix}2
+&amp; 1\\3 &amp; -1\end{bmatrix}$</span>
+（把基向量变换后的结果按列排就行）。</p>
+<p>想算某个向量变换后的位置也很简单，直接用这个矩阵乘向量就行。比如
+<span class="math inline">$\begin{bmatrix}3\\1\end{bmatrix}$</span>
+变换后，就是 <span class="math inline">$\begin{bmatrix}2 &amp; 1\\3
+&amp; -1\end{bmatrix} \times \begin{bmatrix}3\\1\end{bmatrix}$</span>
+，拆开算就是把 <span class="math inline"><em>x</em></span> 和 <span
+class="math inline"><em>y</em></span> 分别按新的基向量缩放再相加。</p>
+<p>要是想把两个线性变换合起来（先做第一个再做第二个），其实就是把两个变换对应的矩阵相乘，注意顺序不能搞反哦！</p>
+<h3 id="行列式">行列式</h3>
+<p>行列式其实就是衡量线性变换“缩放能力”的数：在坐标系里圈一块地方，经过变换后它的面积是原来的多少倍，这个倍数就是行列式的值。</p>
+<p>还有两个关键点：</p>
+<ol type="1">
+<li><p>行列式有正负——要是变换后坐标系“翻了个面”（比如顺时针变逆时针），行列式就是负数；</p></li>
+<li><p>要是行列式等于0，说明变换把空间压成了更低的维度（比如二维变一维），这时候矩阵里的向量肯定是线性相关的。</p></li>
+</ol>
+<p>行列式的计算公式是 <span class="math inline">$\det{A} = \sum_{k=1}^n
+(-1)^{i+k}A_{i,k}M_{i,k}$</span> （ <span
+class="math inline"><em>M</em></span> 是去掉第 <span
+class="math inline"><em>i</em></span> 行第 <span
+class="math inline"><em>k</em></span>
+列后的小矩阵的行列式），虽然看起来复杂，但二阶矩阵直接算 <span
+class="math inline"><em>a</em><em>d</em> − <em>b</em><em>c</em></span>
+就行，很好记。</p>
+<h3 id="线性方程组">线性方程组</h3>
+<p>学过高斯消元的都知道，线性方程组能写成矩阵乘法的样子： <span
+class="math display">$$
+\begin{bmatrix}
+a_{1,1} &amp; a_{1,2} &amp; \dots &amp; a_{1,n}\\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots\\
+a_{n,1} &amp; a_{n,2} &amp; \dots &amp; a_{n,n}
+\end{bmatrix}
+\begin{bmatrix}
+x_1\\
+x_2\\
+\vdots\\
+x_n
+\end{bmatrix}
+=
+\begin{bmatrix}
+b_1\\
+b_2\\
+\vdots\\
+b_n
+\end{bmatrix}
+$$</span></p>
+<p>从几何角度看，解这个方程就是<strong>找一个向量 <span
+class="math inline"><em>x⃗</em></span>
+，让它经过系数矩阵对应的线性变换后，刚好变成右边的 <span
+class="math inline"><em>b⃗</em></span> </strong>。</p>
+<p>这里要提“秩”的概念，它就是变换后空间的维度：</p>
+<ul>
+<li><p>要是变换后维度和原来一样（满秩），那方程要么只有一个解，要么无解；</p></li>
+<li><p>要是不满秩（空间被压缩了），只要 <span
+class="math inline"><em>b⃗</em></span>
+在压缩后的空间里，就有无数个解，否则就无解。</p></li>
+</ul>
+<h2 id="又是向量">又是向量</h2>
+<h3 id="点积">点积</h3>
+<p>在讲这个运算之前，我们先把这个运算的形式写出来。 <span
+class="math display">$$
+\vec{u} \cdot \vec{v}=\sum_{i=1}^{||u||}u_i \times v_i
+$$</span>
+这时候就会有人说了：“为什么要定义这样一个看起来毫无意义的运算？”</p>
+<p>我们先来考虑它的几何意义。</p>
+<figure>
+<img src="https://cdn.luogu.com.cn/upload/image_hosting/0r0xx53s.png"
+alt="点积投影示例1" />
+<figcaption aria-hidden="true">点积投影示例1</figcaption>
+</figure>
+<p>如图，将 <span class="math inline"><em>u⃗</em></span> 向 <span
+class="math inline"><em>v⃗</em></span> 做投影，也就是点 <span
+class="math inline"><em>u</em></span> 向 <span
+class="math inline"><em>A</em><em>C</em></span> 做垂线， <span
+class="math inline"><em>u⃗</em> ⋅ <em>v⃗</em></span> 就是 <span
+class="math inline"><em>A</em><em>D</em> × <em>A</em><em>C</em></span>
+。</p>
+<p>说到这里，你们肯定认为这是一个完全不对称的运算，但是，其实点积满足交换律。</p>
+<p>先不要惊讶，我们来看一张图。</p>
+<figure>
+<img src="https://cdn.luogu.com.cn/upload/image_hosting/7b6kveal.png"
+alt="点积交换律直观示例" />
+<figcaption aria-hidden="true">点积交换律直观示例</figcaption>
+</figure>
+<p>显然，在这种情况下，<span
+class="math inline"><em>u⃗</em> ⋅ <em>v⃗</em></span> 是满足交换律的。</p>
+<p>如果我们把 <span class="math inline"><em>v⃗</em></span> 延长一倍，得到
+<span class="math inline">$\vec{v'}$</span> 。现在我们来算 <span
+class="math inline">$\vec{v'} \cdot \vec{u}$</span> 。</p>
+<figure>
+<img src="https://cdn.luogu.com.cn/upload/image_hosting/0csejzrh.png"
+alt="点积数乘交换律验证" />
+<figcaption aria-hidden="true">点积数乘交换律验证</figcaption>
+</figure>
+<p>如图，当我们计算 <span
+class="math inline"><em>A</em><em>D</em> × <em>A</em><em>F</em></span>
+时，实际上是在算 <span
+class="math inline"><em>A</em><em>D</em> × 2<em>A</em><em>C</em></span>
+；当我们计算 <span
+class="math inline"><em>A</em><em>G</em> × <em>A</em><em>B</em></span>
+时，由于 <span
+class="math inline">△<em>A</em><em>C</em><em>E</em> ∼ △<em>A</em><em>F</em><em>G</em></span>
+，可推知实际是在算 <span
+class="math inline">2<em>A</em><em>E</em> × <em>A</em><em>B</em></span>
+。</p>
+<p>显然， <span
+class="math inline"><em>A</em><em>D</em> × 2<em>A</em><em>C</em> = 2<em>A</em><em>E</em> × <em>A</em><em>B</em></span>
+，故交换律成立。</p>
+<p>显然，我们可以用这种方法构造任何一对向量，所以点积满足交换律。</p>
+<p>现在又有人说了：“你这个点积计算公式和你开头提到的没有任何关系呀！”</p>
+<p>我们来解释一下。</p>
+<p>首先，我们来讲一下从多维空间到一维空间的线性变换。</p>
+<p>普通的线性变换都可以用方阵来表示。但是，从多维到一维的线性变换，它的每一列只剩一个元素了。</p>
+<p>拿二维举例，我们就得到了一个 <span class="math inline">1 × 2</span>
+的矩阵。</p>
+<p>众所周知，二维向量可以表示为 <span class="math inline">2 × 1</span>
+的矩阵。于是，我们将一个二维向量做如上所述的线性变换就可以表示为一个
+<span class="math inline">1 × 2</span> 矩阵乘以一个 <span
+class="math inline">2 × 1</span>
+矩阵。如果你把它展开，就会发现，它其实就是开头所说的那个公式。</p>
+<p>我们现在把刚才的变换得到的一维空间放在原本的二维空间上，其中原本的二维空间的基向量分别为
+<span class="math inline"><em>i⃗</em></span> 、 <span
+class="math inline"><em>j⃗</em></span> ，一维空间的基向量为 <span
+class="math inline"><em>u⃗</em></span> 。</p>
+<figure>
+<img src="https://cdn.luogu.com.cn/upload/image_hosting/ciw3z948.png"
+alt="点积与线性变换关联示例" />
+<figcaption aria-hidden="true">点积与线性变换关联示例</figcaption>
+</figure>
+<p>由于 <span class="math inline"><em>u⃗</em></span> 和 <span
+class="math inline"><em>i⃗</em></span> 是关于直线 <span
+class="math inline"><em>A</em><em>J</em></span> 对称的， <span
+class="math inline"><em>A</em><em>G</em></span> 的长度是 <span
+class="math inline"><em>I</em></span> 的横坐标，也就是 <span
+class="math inline"><em>u</em></span> 的横坐标。</p>
+<p>同理， <span class="math inline"><em>A</em><em>D</em></span> 的长度是
+<span class="math inline"><em>H</em></span> 的纵坐标，也就是<span
+class="math inline"><em>u</em></span>的纵坐标。</p>
+<p>于是，我们把这个线性变换写成 <span
+class="math inline">$\begin{bmatrix}u_x &amp;
+u_y\end{bmatrix}$</span>（注意是横着写），如果我们要算任意一个向量在线性变换之后的结果，既可以直接按照上图的投影来算，也可以乘以
+<span class="math inline">$\begin{bmatrix}u_x &amp;
+u_y\end{bmatrix}$</span>
+，也就是按照开头的公式来算，于是这两个东西的等价性也就证明完毕了。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://cqbzzky.github.io/template/2026/01/09/hello-world/" data-id="cuidFyadZDK8lxTEZ1iudsclW" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://cqbzzky.github.io/template/2026/01/07/%E3%80%90%E6%95%B0%E5%AD%A6%E3%80%91%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%85%A5%E9%97%A8/" data-id="cuid6DHzw70CJem6LfgIoWOXC" data-title="【数学】线性代数入门" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/template/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/template/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag">线性代数</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-【图论】霍尔（Hall）定理" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/template/2026/01/07/%E3%80%90%E5%9B%BE%E8%AE%BA%E3%80%91%E9%9C%8D%E5%B0%94%EF%BC%88Hall%EF%BC%89%E5%AE%9A%E7%90%86/" class="article-date">
+  <time class="dt-published" datetime="2026-01-07T06:18:42.000Z" itemprop="datePublished">2026-01-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/template/categories/%E7%AE%97%E6%B3%95/">算法</a>►<a class="article-category-link" href="/template/categories/%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/">图论</a>►<a class="article-category-link" href="/template/categories/%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E4%BA%8C%E5%88%86%E5%9B%BE/">二分图</a>►<a class="article-category-link" href="/template/categories/%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E4%BA%8C%E5%88%86%E5%9B%BE/%E9%9C%8D%E5%B0%94%E5%AE%9A%E7%90%86/">霍尔定理</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/template/2026/01/07/%E3%80%90%E5%9B%BE%E8%AE%BA%E3%80%91%E9%9C%8D%E5%B0%94%EF%BC%88Hall%EF%BC%89%E5%AE%9A%E7%90%86/">【图论】霍尔（Hall）定理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="定理内容">定理内容</h2>
+<p>对于一个二分图，设左边的点集是 <span
+class="math inline"><em>U</em></span>，右边的点集是 <span
+class="math inline"><em>V</em></span>
+。如果这个二分图有一个完美匹配，当且仅当对于任意一个子集 <span
+class="math inline"><em>S</em> ∈ <em>U</em></span> ，满足 <span
+class="math inline">|<em>S</em>| ≤ |<em>N</em>(<em>S</em>)|</span>
+，其中 <span class="math inline"><em>N</em>(<em>S</em>)</span> 是 <span
+class="math inline"><em>S</em></span> 的邻域，即 <span
+class="math inline"><em>V</em></span> 中所有与 <span
+class="math inline"><em>S</em></span> 中的元素有连边的元素所组成的集合。
+## 定理证明</p>
+<h3 id="必要性">必要性</h3>
+<p>这个非常显然，因为如果邻域比自己还小，那必然有一个人无法匹配。 ###
+充分性证明1 考虑反证法。</p>
+<p><img
+src="https://i-blog.csdnimg.cn/img_convert/c904e43a6327d38f62fbf3311c2a1132.png" /></p>
+<p>如图，这张图满足 Hall
+定理，但是现在没有完美匹配，左右都剩下了一些节点，即 <span
+class="math inline">1</span> 和 <span class="math inline">4</span>。</p>
+<p>对于左边剩下的节点 <span
+class="math inline">1</span>，将其与它的任意一条边对面的点 <span
+class="math inline">2</span> 做匹配（显然是有的，否则集合 <span
+class="math inline">{1}</span>不满足 Hall
+定理）。如果对面已经被选过了，比如 <span class="math inline">2</span> 被
+<span class="math inline">3</span> 选过了，那就让 和它匹配的点 <span
+class="math inline">3</span>
+视为没有匹配，去找另外的匹配（显然是有另外的匹配的，否则集合 <span
+class="math inline">{1, 3}</span> 不满足 Hall 定理）。</p>
+<p>以此类推，最后一定可以找到完美匹配，与假设矛盾！</p>
+<p>综上所述，Hall 定理是二分图有完美匹配的充要条件。 ### 充分性证明2</p>
+<p>考虑归纳证明。</p>
+<p>显然，当 <span class="math inline">|<em>U</em>| = 1</span>
+时，充分性存在。</p>
+<p>当 <span class="math inline">|<em>U</em>| = <em>k</em></span> 且所有
+<span class="math inline">|<em>U</em>| &lt; <em>k</em></span>
+的充分性都存在时，尝试证明 <span class="math inline"><em>U</em></span>
+的充分性存在。 #### 情况 1</p>
+<p><strong>假设</strong>：对每个非空真子集 <span
+class="math inline"><em>S</em> ⊂ <em>U</em></span>（即 <span
+class="math inline">⌀ ≠ <em>S</em> ⊊ <em>U</em></span> ），都有 <span
+class="math display">|<em>N</em>(<em>S</em>)| &gt; |<em>S</em>|.</span>
+<strong>步骤</strong>：</p>
+<ol type="1">
+<li>任取 <span class="math inline"><em>u</em> ∈ <em>U</em></span>。由
+Hall 条件（对单点集 <span class="math inline">{<em>u</em>}</span>
+成立），有 <span
+class="math inline">|<em>N</em>({<em>u</em>})| ≥ 1</span>，所以存在
+<span class="math inline"><em>v</em> ∈ <em>V</em></span> 与 <span
+class="math inline"><em>u</em></span> 相邻。</li>
+<li>从原图 <span class="math inline"><em>G</em></span> 中删去 <span
+class="math inline"><em>u</em>, <em>v</em></span>
+及所有关联的边，得到新图 <span
+class="math inline"><em>G</em><sup>′</sup> = (<em>U</em><sup>′</sup>, <em>V</em><sup>′</sup>, <em>E</em><sup>′</sup>)</span>，其中<br />
+<span
+class="math inline"><em>U</em><sup>′</sup> = <em>U</em> \ {<em>u</em>}</span>，<br />
+<span
+class="math inline"><em>V</em><sup>′</sup> = <em>V</em> \ {<em>v</em>}</span>。</li>
+<li>检查 <span class="math inline"><em>G</em><sup>′</sup></span>
+是否满足 Hall 条件：<br />
+对任意 <span
+class="math inline"><em>S</em><sup>′</sup> ⊆ <em>U</em><sup>′</sup></span>（注意
+<span
+class="math inline">|<em>S</em><sup>′</sup>| ≤ <em>k</em></span>）：
+<ul>
+<li>在原图 <span class="math inline"><em>G</em></span> 中，由于 <span
+class="math inline"><em>S</em><sup>′</sup></span> 是真子集（因为 <span
+class="math inline"><em>S</em><sup>′</sup></span> 不包含 <span
+class="math inline"><em>u</em></span> 且 <span
+class="math inline"><em>S</em><sup>′</sup> ⊆ <em>U</em><sup>′</sup> ⊊ <em>U</em></span>），所以由情况
+1 的条件 <span
+class="math inline">|<em>N</em><sub><em>G</em></sub>(<em>S</em><sup>′</sup>)| &gt; |<em>S</em><sup>′</sup>|</span>。</li>
+<li>在 <span class="math inline"><em>G</em><sup>′</sup></span> 中，邻域
+<span
+class="math inline"><em>N</em><sub><em>G</em><sup>′</sup></sub>(<em>S</em><sup>′</sup>) = <em>N</em><sub><em>G</em></sub>(<em>S</em><sup>′</sup>) \ {<em>v</em>}</span>。</li>
+<li>分两种子情形：
+<ul>
+<li>若 <span
+class="math inline"><em>v</em> ∈ <em>N</em><sub><em>G</em></sub>(<em>S</em><sup>′</sup>)</span>，则<br />
+<span
+class="math inline">|<em>N</em><sub><em>G</em><sup>′</sup></sub>(<em>S</em><sup>′</sup>)| = |<em>N</em><sub><em>G</em></sub>(<em>S</em><sup>′</sup>)|−1 ≥ |<em>S</em><sup>′</sup>|</span>（因为
+<span
+class="math inline">|<em>N</em><sub><em>G</em></sub>(<em>S</em><sup>′</sup>)| ≥ |<em>S</em><sup>′</sup>|+1</span>）。</li>
+<li>若 <span
+class="math inline"><em>v</em> ∉ <em>N</em><sub><em>G</em></sub>(<em>S</em><sup>′</sup>)</span>，则<br />
+<span
+class="math inline">|<em>N</em><sub><em>G</em><sup>′</sup></sub>(<em>S</em><sup>′</sup>)| = |<em>N</em><sub><em>G</em></sub>(<em>S</em><sup>′</sup>)| ≥ |<em>S</em><sup>′</sup>|+1 &gt; |<em>S</em><sup>′</sup>|</span>。</li>
+</ul></li>
+<li>综上，总有 <span
+class="math inline">|<em>N</em><sub><em>G</em><sup>′</sup></sub>(<em>S</em><sup>′</sup>)| ≥ |<em>S</em><sup>′</sup>|</span>。</li>
+</ul></li>
+<li>由于 <span
+class="math inline">|<em>U</em><sup>′</sup>| = <em>k</em></span>，由归纳假设，<span
+class="math inline"><em>G</em><sup>′</sup></span> 存在匹配 <span
+class="math inline"><em>M</em><sup>′</sup></span> 覆盖 <span
+class="math inline"><em>U</em><sup>′</sup></span>。</li>
+<li>将边 <span class="math inline">(<em>u</em>, <em>v</em>)</span> 加入
+<span class="math inline"><em>M</em><sup>′</sup></span>，得到 <span
+class="math inline"><em>G</em></span> 的一个匹配覆盖全部 <span
+class="math inline"><em>U</em></span>。</li>
+</ol>
+<p><strong>情况 1 证毕。</strong></p>
+<p><strong>情况 2</strong></p>
+<p><strong>假设</strong>：存在某个非空真子集 <span
+class="math inline"><em>S</em><sub>0</sub> ⊂ <em>U</em></span>（即 <span
+class="math inline">⌀ ≠ <em>S</em><sub>0</sub> ⊊ <em>U</em></span>）使得<br />
+<span
+class="math display">|<em>N</em>(<em>S</em><sub>0</sub>)| = |<em>S</em><sub>0</sub>|.</span></p>
+<p><strong>步骤 1：将图分成两部分</strong></p>
+<p>由 Hall 条件，<span
+class="math inline">|<em>N</em>(<em>S</em><sub>0</sub>)| ≥ |<em>S</em><sub>0</sub>|</span>，已知相等，所以
+我们可以先考虑子图 <span
+class="math inline"><em>G</em><sub>1</sub> = (<em>S</em><sub>0</sub>, <em>N</em>(<em>S</em><sub>0</sub>), <em>E</em><sub>1</sub>)</span>，其中
+<span class="math inline"><em>E</em><sub>1</sub></span> 是 <span
+class="math inline"><em>E</em></span> 中两端分别在 <span
+class="math inline"><em>S</em><sub>0</sub></span> 与 <span
+class="math inline"><em>N</em>(<em>S</em><sub>0</sub>)</span>
+中的边。</p>
+<p>对任意 <span
+class="math inline"><em>T</em> ⊆ <em>S</em><sub>0</sub></span>，在 <span
+class="math inline"><em>G</em></span> 中 <span
+class="math inline"><em>N</em><sub><em>G</em></sub>(<em>T</em>) ⊆ <em>N</em><sub><em>G</em></sub>(<em>S</em><sub>0</sub>)</span>（不一定等于，但至少邻域在
+<span class="math inline"><em>V</em></span> 中）。<br />
+在 <span class="math inline"><em>G</em><sub>1</sub></span> 中，<span
+class="math inline"><em>T</em></span> 的邻域仍是 <span
+class="math inline"><em>N</em><sub><em>G</em></sub>(<em>T</em>)</span>（因为如果
+<span
+class="math inline"><em>v</em> ∈ <em>N</em><sub><em>G</em></sub>(<em>T</em>)</span>，则
+<span class="math inline"><em>v</em></span> 与某个 <span
+class="math inline"><em>u</em> ∈ <em>T</em> ⊆ <em>S</em><sub>0</sub></span>
+相邻，因此 <span
+class="math inline"><em>v</em> ∈ <em>N</em><sub><em>G</em></sub>(<em>S</em><sub>0</sub>)</span>，所以
+<span
+class="math inline"><em>N</em><sub><em>G</em></sub>(<em>T</em>) ⊆ <em>N</em>(<em>S</em><sub>0</sub>)</span>。）</p>
+<p>因此 <span class="math inline"><em>G</em><sub>1</sub></span> 中 <span
+class="math inline"><em>T</em></span> 的邻域和 <span
+class="math inline"><em>G</em></span> 中相同，即 <span
+class="math inline"><em>N</em><sub><em>G</em><sub>1</sub></sub>(<em>T</em>) = <em>N</em><sub><em>G</em></sub>(<em>T</em>)</span>。</p>
+<p>于是对任意 <span
+class="math inline"><em>T</em> ⊆ <em>S</em><sub>0</sub></span>： <span
+class="math display">|<em>N</em><sub><em>G</em><sub>1</sub></sub>(<em>T</em>)| = |<em>N</em><sub><em>G</em></sub>(<em>T</em>)| ≥ |<em>T</em>|</span>
+由 <span class="math inline"><em>G</em></span> 的 Hall 条件得出。所以
+<span class="math inline"><em>G</em><sub>1</sub></span> 也满足 Hall
+条件。</p>
+<p>并且 <span
+class="math inline">|<em>N</em><sub><em>G</em><sub>1</sub></sub>(<em>S</em><sub>0</sub>)| = |<em>S</em><sub>0</sub>|</span>
+仍然成立。</p>
+<p><strong>步骤 2：对 <span
+class="math inline"><em>G</em><sub>1</sub></span>
+使用归纳假设</strong></p>
+<p>因为 <span
+class="math inline">1 ≤ |<em>S</em><sub>0</sub>| &lt; |<em>U</em>|</span>，由归纳假设（假设定理对点数较小的
+<span class="math inline"><em>U</em></span> 成立），图 <span
+class="math inline"><em>G</em><sub>1</sub></span> 存在饱和 $ S_0 $
+的匹配 <span class="math inline"><em>M</em><sub>1</sub></span>，匹配大小
+<span
+class="math inline">|<em>M</em><sub>1</sub>| = |<em>S</em><sub>0</sub>|</span>。</p>
+<p><span class="math inline"><em>M</em><sub>1</sub></span> 用了 <span
+class="math inline"><em>N</em>(<em>S</em><sub>0</sub>)</span>
+的所有点了吗？注意 <span
+class="math inline">|<em>M</em><sub>1</sub>| = |<em>S</em><sub>0</sub>| = |<em>N</em>(<em>S</em><sub>0</sub>)|</span>，所以
+<span class="math inline"><em>M</em><sub>1</sub></span> 饱和了 <span
+class="math inline"><em>S</em><sub>0</sub></span> 和 <span
+class="math inline"><em>N</em>(<em>S</em><sub>0</sub>)</span>（即匹配边从
+<span class="math inline"><em>S</em><sub>0</sub></span> 到 <span
+class="math inline"><em>N</em>(<em>S</em><sub>0</sub>)</span>
+双射）。</p>
+<p>因此，<span class="math inline"><em>M</em><sub>1</sub></span> 占用了
+<span class="math inline"><em>N</em>(<em>S</em><sub>0</sub>)</span>
+的所有点与 <span class="math inline"><em>S</em><sub>0</sub></span>
+的所有点。</p>
+<p><strong>步骤 3：考虑剩余子图 <span
+class="math inline"><em>G</em><sub>2</sub></span></strong></p>
+<p>令 <span
+class="math inline"><em>U</em><sup>′</sup> = <em>U</em> \ <em>S</em><sub>0</sub></span>，<br />
+<span
+class="math inline"><em>V</em><sup>′</sup> = <em>V</em> \ <em>N</em>(<em>S</em><sub>0</sub>)</span>，<br />
+<span class="math inline"><em>E</em><sub>2</sub></span> 为连接 <span
+class="math inline"><em>U</em><sup>′</sup></span> 与 <span
+class="math inline"><em>V</em><sup>′</sup></span> 的边（以及 <span
+class="math inline"><em>U</em><sup>′</sup></span> 与 <span
+class="math inline"><em>N</em>(<em>S</em><sub>0</sub>)</span>
+的边我们不考虑吗？这需要小心：原图可能还有 <span
+class="math inline"><em>U</em><sup>′</sup></span> 到 <span
+class="math inline"><em>N</em>(<em>S</em><sub>0</sub>)</span>
+的边，但这些边不能用在 <span
+class="math inline"><em>G</em><sub>2</sub></span> 的匹配中，因为 <span
+class="math inline"><em>N</em>(<em>S</em><sub>0</sub>)</span> 在 <span
+class="math inline"><em>G</em><sub>1</sub></span> 中已经全被 <span
+class="math inline"><em>M</em><sub>1</sub></span> 占用了。我们定义 <span
+class="math inline"><em>G</em><sub>2</sub> = (<em>U</em><sup>′</sup>, <em>V</em><sup>′</sup>, <em>E</em><sup>′</sup>)</span>，其中
+<span
+class="math inline"><em>E</em><sup>′</sup> = {(<em>u</em>, <em>v</em>) ∈ <em>E</em> ∣ <em>u</em> ∈ <em>U</em><sup>′</sup>, <em>v</em> ∈ <em>V</em><sup>′</sup>}</span>。</p>
+<p>我们要证：<span class="math inline"><em>G</em><sub>2</sub></span>
+满足 Hall 条件。</p>
+<p>取任意 <span
+class="math inline"><em>S</em> ⊆ <em>U</em><sup>′</sup></span>，考虑它在原图中的邻域
+<span
+class="math inline"><em>N</em><sub><em>G</em></sub>(<em>S</em>)</span>。</p>
+<p><strong>引理：<span class="math inline"><em>G</em><sub>2</sub></span>
+满足 Hall 条件</strong></p>
+<p><strong>证明</strong>：取任意 <span
+class="math inline"><em>S</em> ⊆ <em>U</em><sup>′</sup></span>，考虑原图
+<span class="math inline"><em>G</em></span> 中的 <span
+class="math inline"><em>T</em> = <em>S</em><sub>0</sub> ∪ <em>S</em></span>。</p>
+<p>我们想证：对任意 <span
+class="math inline"><em>S</em> ⊆ <em>U</em><sup>′</sup></span>，在子图
+<span class="math inline"><em>G</em><sub>2</sub></span> 中 <span
+class="math inline">|<em>N</em><sub><em>G</em><sub>2</sub></sub>(<em>S</em>)| ≥ |<em>S</em>|</span>。</p>
+<p><span
+class="math inline"><em>N</em><sub><em>G</em><sub>2</sub></sub>(<em>S</em>)</span>
+定义为在 <span class="math inline"><em>G</em><sub>2</sub></span> 中
+<span class="math inline"><em>S</em></span> 的邻域，即 <span
+class="math inline"><em>V</em><sup>′</sup></span> 中与 <span
+class="math inline"><em>S</em></span> 有边相连的点。</p>
+<p>在 <span class="math inline"><em>G</em></span> 中，<span
+class="math inline"><em>S</em></span> 的邻域 <span
+class="math inline"><em>N</em><sub><em>G</em></sub>(<em>S</em>)</span>
+可能有一部分落在 <span
+class="math inline"><em>N</em><sub><em>G</em></sub>(<em>S</em><sub>0</sub>)</span>
+中，另一部分落在 <span class="math inline"><em>V</em><sup>′</sup></span>
+中。</p>
+<p>设： <span
+class="math display"><em>A</em> = <em>N</em><sub><em>G</em></sub>(<em>S</em>) ∩ <em>N</em><sub><em>G</em></sub>(<em>S</em><sub>0</sub>),  <em>B</em> = <em>N</em><sub><em>G</em></sub>(<em>S</em>) ∩ <em>V</em><sup>′</sup></span>
+显然： <span
+class="math display"><em>N</em><sub><em>G</em></sub>(<em>S</em>) = <em>A</em> ∪ <em>B</em>,  |<em>N</em><sub><em>G</em></sub>(<em>S</em>)| = |<em>A</em>|+|<em>B</em>|</span>
+且 <span
+class="math inline"><em>B</em> = <em>N</em><sub><em>G</em><sub>2</sub></sub>(<em>S</em>)</span>。</p>
+<p>考虑 <span
+class="math inline"><em>T</em> = <em>S</em><sub>0</sub> ∪ <em>S</em></span>（这是
+<span class="math inline"><em>U</em></span> 的子集），<br />
+<span
+class="math inline"><em>N</em><sub><em>G</em></sub>(<em>T</em>) = <em>N</em><sub><em>G</em></sub>(<em>S</em><sub>0</sub>) ∪ <em>N</em><sub><em>G</em></sub>(<em>S</em>)</span>（一般并集，可能有交）。</p>
+<p>于是： <span
+class="math display">|<em>N</em><sub><em>G</em></sub>(<em>T</em>)| = |<em>N</em><sub><em>G</em></sub>(<em>S</em><sub>0</sub>)|+|<em>N</em><sub><em>G</em></sub>(<em>S</em>)|−|<em>N</em><sub><em>G</em></sub>(<em>S</em><sub>0</sub>) ∩ <em>N</em><sub><em>G</em></sub>(<em>S</em>)|</span>
+而 <span
+class="math inline"><em>N</em><sub><em>G</em></sub>(<em>S</em><sub>0</sub>) ∩ <em>N</em><sub><em>G</em></sub>(<em>S</em>) = <em>A</em></span>，所以：
+<span
+class="math display">|<em>N</em><sub><em>G</em></sub>(<em>T</em>)| = |<em>N</em><sub><em>G</em></sub>(<em>S</em><sub>0</sub>)|+(|<em>A</em>|+|<em>B</em>|) − |<em>A</em>| = |<em>N</em><sub><em>G</em></sub>(<em>S</em><sub>0</sub>)|+|<em>B</em>|.</span>
+由 <span
+class="math inline">|<em>N</em><sub><em>G</em></sub>(<em>S</em><sub>0</sub>)| = |<em>S</em><sub>0</sub>|</span>，得：
+<span
+class="math display">|<em>N</em><sub><em>G</em></sub>(<em>T</em>)| = |<em>S</em><sub>0</sub>|+|<em>B</em>|.</span>
+结合 <span
+class="math inline">|<em>N</em><sub><em>G</em></sub>(<em>T</em>)| ≥ |<em>S</em><sub>0</sub>|+|<em>S</em>|</span>，有
+<span class="math inline">|<em>B</em>| ≥ |<em>S</em>|</span>，即： <span
+class="math display">|<em>N</em><sub><em>G</em><sub>2</sub></sub>(<em>S</em>)| ≥ |<em>S</em>|.</span></p>
+<p>这正是 <span class="math inline"><em>G</em><sub>2</sub></span> 的
+Hall 条件。</p>
+<p><strong>步骤 4：对 <span
+class="math inline"><em>G</em><sub>2</sub></span>
+使用归纳假设</strong></p>
+<p>由于 <span
+class="math inline">|<em>U</em><sup>′</sup>| &lt; |<em>U</em>|</span>，根据归纳假设，<span
+class="math inline"><em>G</em><sub>2</sub></span> 存在饱和 <span
+class="math inline"><em>U</em><sup>′</sup></span> 的匹配 <span
+class="math inline"><em>M</em><sub>2</sub></span>，匹配大小为 <span
+class="math inline">|<em>U</em><sup>′</sup>|</span>。</p>
+<p><strong>步骤 5：合并匹配</strong></p>
+<p>匹配 <span class="math inline"><em>M</em><sub>1</sub></span>（从
+<span class="math inline"><em>S</em><sub>0</sub></span> 到 <span
+class="math inline"><em>N</em>(<em>S</em><sub>0</sub>)</span>）与匹配
+<span class="math inline"><em>M</em><sub>2</sub></span>（从 <span
+class="math inline"><em>U</em><sup>′</sup></span> 到 <span
+class="math inline"><em>V</em><sup>′</sup></span>）没有公共顶点，因为：</p>
+<ul>
+<li><span class="math inline"><em>M</em><sub>1</sub></span> 占用 <span
+class="math inline"><em>N</em>(<em>S</em><sub>0</sub>)</span>
+全部，<span class="math inline"><em>M</em><sub>2</sub></span> 只占用
+<span
+class="math inline"><em>V</em><sup>′</sup> = <em>V</em> \ <em>N</em>(<em>S</em><sub>0</sub>)</span>；</li>
+<li><span class="math inline"><em>M</em><sub>1</sub></span> 占用 <span
+class="math inline"><em>S</em><sub>0</sub></span>，<span
+class="math inline"><em>M</em><sub>2</sub></span> 占用 <span
+class="math inline"><em>U</em><sup>′</sup></span>。</li>
+</ul>
+<p>因此 <span
+class="math inline"><em>M</em> = <em>M</em><sub>1</sub> ∪ <em>M</em><sub>2</sub></span>
+是 <span class="math inline"><em>G</em></span> 的一个匹配，且覆盖 <span
+class="math inline"><em>U</em> = <em>S</em><sub>0</sub> ∪ <em>U</em><sup>′</sup></span>。</p>
+<p>匹配大小 $ |M| = |S_0| + |U’| = |U| $，所以它是饱和 <span
+class="math inline"><em>U</em></span> 的匹配。</p>
+<p>情况 2 在 Hall 条件成立且存在 <span
+class="math inline"><em>S</em><sub>0</sub></span> 使 <span
+class="math inline">|<em>N</em>(<em>S</em><sub>0</sub>)| = |<em>S</em><sub>0</sub>|</span>
+时，可通过分解为两个更小的子图分别构造匹配并合并，从而得到整体的饱和
+<span class="math inline"><em>U</em></span> 的匹配，归纳完成。</p>
+<p><strong>情况 2 证毕。</strong></p>
+<p>综上所述，Hall 定理是二分图有完美匹配的充要条件。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://cqbzzky.github.io/template/2026/01/07/%E3%80%90%E5%9B%BE%E8%AE%BA%E3%80%91%E9%9C%8D%E5%B0%94%EF%BC%88Hall%EF%BC%89%E5%AE%9A%E7%90%86/" data-id="cuid4zjx0cycejXi6X9yvcJUG" data-title="【图论】霍尔（Hall）定理" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/template/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/" rel="tag">二分图</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/template/tags/%E5%9B%BE%E8%AE%BA/" rel="tag">图论</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/template/tags/%E9%9C%8D%E5%B0%94%E5%AE%9A%E7%90%86/" rel="tag">霍尔定理</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-【数据结构】笛卡尔树" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/template/2026/01/07/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%91%E7%AC%9B%E5%8D%A1%E5%B0%94%E6%A0%91/" class="article-date">
+  <time class="dt-published" datetime="2026-01-07T06:13:26.000Z" itemprop="datePublished">2026-01-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/template/categories/%E7%AE%97%E6%B3%95/">算法</a>►<a class="article-category-link" href="/template/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>►<a class="article-category-link" href="/template/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%B3%E8%A1%A1%E6%A0%91/">平衡树</a>►<a class="article-category-link" href="/template/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%B3%E8%A1%A1%E6%A0%91/%E7%AC%9B%E5%8D%A1%E5%B0%94%E6%A0%91/">笛卡尔树</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/template/2026/01/07/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%91%E7%AC%9B%E5%8D%A1%E5%B0%94%E6%A0%91/">【数据结构】笛卡尔树</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="算法思路">算法思路</h2>
+<p>笛卡尔树，顾名思义，和笛卡尔没有任何关系。笛卡尔树是用来优化 treap
+的建树的，不支持修改。</p>
+<p>笛卡尔树的每个节点都有一个 key 和一个 value ，其中 key 满足 BST
+性质，value 满足堆性质。</p>
+<p>首先，我们对节点按照 key 升序排序。</p>
+<p>然后，维护一个 value 升序的单调栈。</p>
+<p>对于第 <span class="math inline"><em>i</em></span>
+个节点，它是它在单调栈中压住的那一个节点的右儿子，它的左儿子是最后一个被弹出的节点。</p>
+<p>比如说：</p>
+<p>key: 1 2 3 4 5 6 7 8 value:3 4 5 2 6 1 8 7</p>
+<p>第一步： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">单1</span><br><span class="line">调3</span><br><span class="line">栈</span><br><span class="line">(1,3)是它压着的那个节点的右儿子，没有这个节点，所以将它作为根。</span><br><span class="line">(1,3)的左儿子是最后一个被弹出的节点，没有这个节点。</span><br><span class="line">(1,3)</span><br></pre></td></tr></table></figure> 第二步： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">单1 2</span><br><span class="line">调3 4</span><br><span class="line">栈</span><br><span class="line">(2,4)是它压着的那个节点的右儿子，即(1,3)的右儿子。</span><br><span class="line">(2,4)的左儿子是最后一个被弹出的节点，没有这个节点。</span><br><span class="line">(1,3)</span><br><span class="line">    \</span><br><span class="line">   (2,4)</span><br></pre></td></tr></table></figure> 第三步： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">单1 2 3</span><br><span class="line">调3 4 5</span><br><span class="line">栈</span><br><span class="line">(3,5)是它压着的那个节点的右儿子，即(2,4)的右儿子。</span><br><span class="line">(3,5)的左儿子是最后一个被弹出的节点，没有这个节点。</span><br><span class="line">(1,3)</span><br><span class="line">    \</span><br><span class="line">   (2,4)</span><br><span class="line">      \</span><br><span class="line">     (3,5)</span><br></pre></td></tr></table></figure>
+第四步： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">单4</span><br><span class="line">调2</span><br><span class="line">栈</span><br><span class="line">弹出:(3,5) (2,4) (1,3)</span><br><span class="line">(4,2)是它压着的那个节点的右儿子，没有这个节点，所以将它作为根。</span><br><span class="line">(4,2)的左儿子是最后一个被弹出的节点，即(1,3)。</span><br><span class="line">  (4,2)</span><br><span class="line">   /</span><br><span class="line">(1,3)</span><br><span class="line">    \</span><br><span class="line">   (2,4)</span><br><span class="line">      \</span><br><span class="line">     (3,5)</span><br></pre></td></tr></table></figure> 第五步： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">单4 5</span><br><span class="line">调2 6</span><br><span class="line">栈</span><br><span class="line">(5,6)是它压着的那个节点的右儿子，即(4,5)的右儿子。</span><br><span class="line">(5,6)的左儿子是最后一个被弹出的节点，没有这个节点。</span><br><span class="line">   (4,2)</span><br><span class="line">   /  \</span><br><span class="line">(1,3) (5,6)</span><br><span class="line">    \</span><br><span class="line">   (2,4)</span><br><span class="line">      \</span><br><span class="line">     (3,5)</span><br></pre></td></tr></table></figure> 第六步： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">单6</span><br><span class="line">调1</span><br><span class="line">栈</span><br><span class="line">弹出(5,6) (4,2)</span><br><span class="line">(6,1)是它压着的那个节点的右儿子，没有这个节点，所以将它作为根。</span><br><span class="line">(6,1)的左儿子是最后一个被弹出的节点，即(4,2)。</span><br><span class="line">     (6,1)</span><br><span class="line">      /</span><br><span class="line">   (4,2)</span><br><span class="line">   /  \</span><br><span class="line">(1,3) (5,6)</span><br><span class="line">    \</span><br><span class="line">   (2,4)</span><br><span class="line">      \</span><br><span class="line">     (3,5)</span><br></pre></td></tr></table></figure>
+第七步： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">单6 7</span><br><span class="line">调1 8</span><br><span class="line">栈</span><br><span class="line">(7,8)是它压着的那个节点的右儿子，即(6,1)的右儿子。</span><br><span class="line">(7,8)的左儿子是最后一个被弹出的节点，没有这个节点。</span><br><span class="line">     (6,1)</span><br><span class="line">     /  \</span><br><span class="line">  (4,2) (7,8)</span><br><span class="line">   /  \</span><br><span class="line">(1,3) (5,6)</span><br><span class="line">    \</span><br><span class="line">   (2,4)</span><br><span class="line">      \</span><br><span class="line">     (3,5)</span><br></pre></td></tr></table></figure> 第八步： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">单6 8</span><br><span class="line">调1 7</span><br><span class="line">栈</span><br><span class="line">弹出(7,8)</span><br><span class="line">(8,7)是它压着的那个节点的右儿子，即(6,1)的右儿子。</span><br><span class="line">(8,7)的左儿子是最后一个被弹出的节点，即(7,8)。</span><br><span class="line">       (6,1)</span><br><span class="line">       /   \</span><br><span class="line">   (4,2)   (8,7)</span><br><span class="line">    / \      /</span><br><span class="line">(1,3)(5,6)(7,8)</span><br><span class="line">   \</span><br><span class="line">  (2,4)</span><br><span class="line">     \</span><br><span class="line">    (3,5)</span><br></pre></td></tr></table></figure> ## 算法实现 <a
+target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P5854">题目链接</a> <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">vector&lt;pair&lt;<span class="type">int</span>,<span class="type">int</span>&gt;&gt; st;</span><br><span class="line">vector&lt;array&lt;<span class="type">int</span>,2&gt;&gt; tr;</span><br><span class="line"><span class="type">int</span> n;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>);</span><br><span class="line">	cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	tr.<span class="built_in">resize</span>(n<span class="number">+1</span>);</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">int</span> a;</span><br><span class="line">		cin&gt;&gt;a;</span><br><span class="line">		<span class="type">int</span> x=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span> (!st.<span class="built_in">empty</span>()&amp;&amp;a&lt;st.<span class="built_in">back</span>().second)</span><br><span class="line">		&#123;</span><br><span class="line">			x=st.<span class="built_in">back</span>().first;</span><br><span class="line">			st.<span class="built_in">pop_back</span>();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (!st.<span class="built_in">empty</span>())</span><br><span class="line">		&#123;</span><br><span class="line">			tr[st.<span class="built_in">back</span>().first][<span class="number">1</span>]=i;</span><br><span class="line">		&#125;</span><br><span class="line">		tr[i][<span class="number">0</span>]=x;</span><br><span class="line">		st.<span class="built_in">push_back</span>(&#123;i,a&#125;);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">long</span> <span class="type">long</span> ans1=<span class="number">0</span>,ans2=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		ans1^=<span class="number">1ll</span>*i*(tr[i][<span class="number">0</span>]<span class="number">+1</span>);</span><br><span class="line">		ans2^=<span class="number">1ll</span>*i*(tr[i][<span class="number">1</span>]<span class="number">+1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;ans1&lt;&lt;<span class="string">&#x27; &#x27;</span>&lt;&lt;ans2;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+注：这份代码为了卡内存，而写的不太好，比较好<del>复制</del>用的在<a
+target="_blank" rel="noopener" href="https://www.luogu.com.cn/paste/ccidd98y">这里</a>。 ##
+算法应用</p>
+<h3 id="优化-bst">优化 BST</h3>
+<p>这时候有人就会说了：“啊~，优化 BST
+的方法那么多，各种平衡树都是干这个事的，为什么还要搞一个静态的笛卡尔树呢？”</p>
+<p>说对了一半。平衡树是可以优化
+BST，但是它们都是基于旋转/分裂的，一旋转/分裂，它的顺序就变了。虽然还是满足
+BST 性质，但是它已经不是本来按部就班的 BST 的结构了。</p>
+<p>这时候有人就会说了：“啊~，为什么要管那么多呢？满足 BST
+性质就够了呀！”</p>
+<p>那请你用平衡树做一下<a
+target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2171">这道题</a>。</p>
+<p>我们想一下如何优化。</p>
+<p>BST
+之所以和其他平衡树的形态不同，是因为平衡树在插入顺序角度来看完全无序，而
+BST 中的父结点一定先于子结点插入。</p>
+<p>既然如此，其实就是 BST 的插入顺序满足堆性质，实际值满足 BST
+性质，就是一个笛卡尔树。 ### <span
+class="math inline">10<sup>7</sup></span> RMQ</p>
+<p>假设有这样一道题。</p>
+<p>有一个长度为 <span class="math inline"><em>n</em></span> 的数组和
+<span class="math inline"><em>q</em></span>
+个查询，每次查询都询问某一区间的最小值（即 RMQ ）。</p>
+<p>输入的数组和查询都由种子生成，输出所有答案的异或和（即不用考虑 IO
+）。</p>
+<p>其中， <span
+class="math inline">1 ≤ <em>n</em>, <em>q</em> ≤ 10<sup>7</sup></span>。</p>
+<p>显然，这次连预处理都不能带 <span class="math inline">log </span> 了，
+st 表不能用。</p>
+<p>考虑如何用笛卡尔树解决。</p>
+<p>如果我们用数组下标当 key ，元素值当 value
+，我们会发现，一个节点的左子树的下标都比自己小，元素值都比自己大，右子树的下标都比自己大，元素值也比自己大。</p>
+<p>于是，我们可以得到，从 <span class="math inline"><em>l</em></span> 到
+<span class="math inline"><em>r</em></span> 的最小值是它们的
+最近公共祖先 的 value 。</p>
+<p>而最近公共祖先可以用 Tarjan 离线 <span
+class="math inline"><em>O</em>(<em>n</em>)</span>
+全部处理，所以总时间复杂度为 <span
+class="math inline"><em>O</em>(<em>n</em>) + <em>O</em>(<em>q</em>) + <em>O</em>(<em>n</em>) = <em>O</em>(<em>n</em> + <em>q</em>)</span>
+。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://cqbzzky.github.io/template/2026/01/07/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%91%E7%AC%9B%E5%8D%A1%E5%B0%94%E6%A0%91/" data-id="cuidRPXhjpYFtetKzAAYpd7_7" data-title="【数据结构】笛卡尔树" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/template/tags/%E5%B9%B3%E8%A1%A1%E6%A0%91/" rel="tag">平衡树</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/template/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/template/tags/%E7%AC%9B%E5%8D%A1%E5%B0%94%E6%A0%91/" rel="tag">笛卡尔树</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-【图论】树上启发式合并（DSU-on-tree）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/template/2026/01/07/%E3%80%90%E5%9B%BE%E8%AE%BA%E3%80%91%E6%A0%91%E4%B8%8A%E5%90%AF%E5%8F%91%E5%BC%8F%E5%90%88%E5%B9%B6%EF%BC%88DSU-on-tree%EF%BC%89/" class="article-date">
+  <time class="dt-published" datetime="2026-01-07T04:28:47.000Z" itemprop="datePublished">2026-01-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/template/categories/%E7%AE%97%E6%B3%95/">算法</a>►<a class="article-category-link" href="/template/categories/%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/">图论</a>►<a class="article-category-link" href="/template/categories/%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E6%A0%91/">树</a>►<a class="article-category-link" href="/template/categories/%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E6%A0%91/%E6%A0%91%E4%B8%8A%E5%90%AF%E5%8F%91%E5%BC%8F%E5%90%88%E5%B9%B6/">树上启发式合并</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/template/2026/01/07/%E3%80%90%E5%9B%BE%E8%AE%BA%E3%80%91%E6%A0%91%E4%B8%8A%E5%90%AF%E5%8F%91%E5%BC%8F%E5%90%88%E5%B9%B6%EF%BC%88DSU-on-tree%EF%BC%89/">【图论】树上启发式合并（DSU on tree）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="引入">引入</h2>
+<p>想象一个场景。</p>
+<p>有 <span class="math inline"><em>n</em></span>
+个学生分班，一开始每个学生都单独在一个班。但是学校<del>太穷了</del>只有一个老师，于是校长大手一挥，“全都给我到一个班里去！”</p>
+<p>但是一堆人全部混在一起，太乱了，于是校长决定要分批合并，也就是每次合并两个班，合并
+<span class="math inline"><em>n</em> − 1</span> 次。</p>
+<p>由于每个学生都有一个档案，合并班的时候就要重新打印档案。学校<del>太穷了</del>为了让打印的档案尽可能少，规定：在合并时，只重新打印人少的那个班的人的档案。</p>
+<p>由于<del>学校太穷了削减了食堂的经费</del>学生完全不听校长的指挥，一通乱合并。校长急切地想知道他最多需要重新打印多少档案<del>好考虑是否继续削减食堂的经费</del>。</p>
+<p>我们考虑每一个学生。</p>
+<p>对于一个学生，ta只会在遇到比自己大的班的时候重新打印档案。而遇到比自己大的班后，ta所在的班的大小至少会翻倍。也就是说，一个学生最多重新打印
+<span class="math inline">log <em>n</em></span> 次档案。有 <span
+class="math inline"><em>n</em></span> 个学生，所以校长需要打印 <span
+class="math inline"><em>n</em>log <em>n</em></span> 次。</p>
+<h2 id="正题">正题</h2>
+<p>考虑<a
+target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/U41492">这个问题</a>。</p>
+<p>按常理来想，我们直接 DFS 整棵树，拿一个 cnt
+数组算出每棵子树的答案就好了。</p>
+<p>但是，我们拿的不是普通的东西，是一个长度为 <span
+class="math inline">10<sup>5</sup></span> 的数组。显然，我们无法在 DFS
+时清空它，也无法在递归函数里开这么大的数组。</p>
+<p>于是，我们想想如何复用它。</p>
+<figure>
+<img
+src="https://img2024.cnblogs.com/blog/3628372/202512/3628372-20251207193952213-259306587.png"
+alt="graph (2)" />
+<figcaption aria-hidden="true">graph (2)</figcaption>
+</figure>
+<p>看这个图。如果我们不清空，直接用，那么在我们从 <span
+class="math inline">6</span> 返回出来继续递归 <span
+class="math inline">7</span> 时， cnt 数组里就会保留 <span
+class="math inline">6</span> 这个元素，所以是错误的。</p>
+<p>如果我们清空，对于一个有 <span class="math inline"><em>x</em></span>
+个子节点的节点，它需要清空 <span
+class="math inline"><em>x</em> − 1</span>
+次（最后一个子结点就不用清空了）。想想校长是怎么省钱的，就能类比出来，我们让拥有最大子树的那个子节点不清空。</p>
+<p>类似的，我们也能证明这样的时间复杂度是 <span
+class="math inline"><em>O</em>(<em>n</em>log <em>n</em>)</span> 的。</p>
+<h2 id="流程">流程</h2>
+<ol type="1">
+<li>将所有轻儿子（没有拥有最大的子树）递归下去计算 ans ，每次都清空
+cnt。</li>
+<li>将重儿子（拥有最大的子树）递归下去计算 ans，不清空 cnt。</li>
+<li>将所有轻儿子递归下去计算 cnt。</li>
+<li>如果这个节点本身是轻儿子，清空 cnt。</li>
+</ol>
+<h2 id="实现">实现</h2>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; graph;</span><br><span class="line">vector&lt;<span class="type">int</span>&gt; ans,sz,c,h,cnt;</span><br><span class="line"><span class="type">int</span> n,q,sum;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">DFS1</span><span class="params">(<span class="type">int</span> u,<span class="type">int</span> f)</span><span class="comment">//计算重儿子</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	h[u]=<span class="number">-1</span>;</span><br><span class="line">	sz[u]=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i:graph[u])</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (i==f)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">DFS1</span>(i,u);</span><br><span class="line">		sz[u]+=sz[i];</span><br><span class="line">		<span class="keyword">if</span> (h[u]==<span class="number">-1</span>||sz[h[u]]&lt;sz[i])</span><br><span class="line">		&#123;</span><br><span class="line">			h[u]=i;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">DFS2</span><span class="params">(<span class="type">int</span> u,<span class="type">int</span> f,<span class="type">int</span> v,<span class="type">int</span> x)</span><span class="comment">//统计cnt和ans</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (cnt[c[u]]==<span class="number">0</span>&amp;&amp;v==<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">    	sum++;</span><br><span class="line">    &#125;</span><br><span class="line">    cnt[c[u]]+=v;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i:graph[u])</span><br><span class="line">    &#123;</span><br><span class="line">    	<span class="keyword">if</span> (i==f||i==x)</span><br><span class="line">    	&#123;</span><br><span class="line">    		<span class="keyword">continue</span>;</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="built_in">DFS2</span>(i,u,v,x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">DFS3</span><span class="params">(<span class="type">int</span> u,<span class="type">int</span> f,<span class="type">bool</span> fg)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i:graph[u])<span class="comment">//将所有轻儿子（没有拥有最大的子树）递归下去计算 ans ，每次都清空 cnt。</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (i==f||i==h[u])</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">DFS3</span>(i,u,<span class="literal">false</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (h[u]!=<span class="number">-1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">DFS3</span>(h[u],u,<span class="literal">true</span>);<span class="comment">//将重儿子（拥有最大的子树）递归下去计算 ans，不清空 cnt。</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">DFS2</span>(u,f,<span class="number">1</span>,h[u]);<span class="comment">//将所有轻儿子递归下去计算 cnt。</span></span><br><span class="line">	ans[u]=sum;</span><br><span class="line">	<span class="keyword">if</span> (!fg)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">DFS2</span>(u,f,<span class="number">-1</span>,<span class="number">-1</span>);<span class="comment">//如果这个节点本身是轻儿子，清空 cnt。</span></span><br><span class="line">		sum=<span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>);</span><br><span class="line">	cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	c.<span class="built_in">resize</span>(n<span class="number">+1</span>);</span><br><span class="line">	h.<span class="built_in">resize</span>(n<span class="number">+1</span>);</span><br><span class="line">	sz.<span class="built_in">resize</span>(n<span class="number">+1</span>);</span><br><span class="line">	ans.<span class="built_in">resize</span>(n<span class="number">+1</span>);</span><br><span class="line">	cnt.<span class="built_in">resize</span>(n<span class="number">+1</span>,<span class="number">0</span>);</span><br><span class="line">	graph.<span class="built_in">resize</span>(n<span class="number">+1</span>);</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">int</span> u,v;</span><br><span class="line">		cin&gt;&gt;u&gt;&gt;v;</span><br><span class="line">		graph[u].<span class="built_in">push_back</span>(v);</span><br><span class="line">		graph[v].<span class="built_in">push_back</span>(u);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cin&gt;&gt;c[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">DFS1</span>(<span class="number">1</span>,<span class="number">-1</span>);</span><br><span class="line">	<span class="built_in">DFS3</span>(<span class="number">1</span>,<span class="number">-1</span>,<span class="literal">true</span>);</span><br><span class="line">	cin&gt;&gt;q;</span><br><span class="line">	<span class="keyword">while</span> (q--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">int</span> x;</span><br><span class="line">		cin&gt;&gt;x;</span><br><span class="line">		cout&lt;&lt;ans[x]&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="后记">后记</h2>
+<p>我看过很多讲树上启发式合并的博客，都没有看懂<del>我太菜了</del>，最后看了左神的<a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ujo6YCEjt/?spm_id_from=333.1387.search.video_card.click">视频</a>才看懂的，所以写了这篇博客。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://cqbzzky.github.io/template/2026/01/07/%E3%80%90%E5%9B%BE%E8%AE%BA%E3%80%91%E6%A0%91%E4%B8%8A%E5%90%AF%E5%8F%91%E5%BC%8F%E5%90%88%E5%B9%B6%EF%BC%88DSU-on-tree%EF%BC%89/" data-id="cuidahGKLQm9r2cWacoPPF_o1" data-title="【图论】树上启发式合并（DSU on tree）" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/template/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E5%90%88%E5%B9%B6/" rel="tag">启发式合并</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/template/tags/%E5%9B%BE%E8%AE%BA/" rel="tag">图论</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/template/tags/%E6%A0%91/" rel="tag">树</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-【数据结构】CDQ分治" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/template/2026/01/07/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%91CDQ%E5%88%86%E6%B2%BB/" class="article-date">
+  <time class="dt-published" datetime="2026-01-07T04:13:20.000Z" itemprop="datePublished">2026-01-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/template/categories/%E7%AE%97%E6%B3%95/">算法</a>►<a class="article-category-link" href="/template/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/template/2026/01/07/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%91CDQ%E5%88%86%E6%B2%BB/">【数据结构】CDQ分治</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        CDQ分治是用来解决高维偏序问题的最常用的解法之一。
+<details>
+<summary>
+高维偏序问题
+</summary>
+<p>偏序问题通常表示为一个集合 <span
+class="math inline"><em>P</em></span> 和一个二元运算 <span
+class="math inline">≺</span> ， <span class="math inline">≺</span>
+要满足一些性质：</p>
+<ul>
+<li>自反性，即 <span class="math inline"><em>a</em> ≺ <em>a</em></span>
+；</li>
+<li>反对称性，即如果 <span
+class="math inline"><em>a</em> ≺ <em>b</em> ∧ <em>b</em> ≺ <em>a</em></span>
+，则 <span class="math inline"><em>a</em> = <em>b</em></span> ；</li>
+<li>传递性，即如果 <span
+class="math inline"><em>a</em> ≺ <em>b</em> ∧ <em>b</em> ≺ <em>a</em></span>
+，则 <span class="math inline"><em>a</em> ≺ <em>c</em></span> 。</li>
+</ul>
+<p>利用这个二元运算在集合内做的各种统计就属于偏序问题。</p>
+而高维偏序问题就是多元组之间的偏序问题。这些多元组内部有优先级，比如先比较<span
+class="math inline"><em>a</em><sub><em>i</em></sub></span>，相同则比较
+<span class="math inline"><em>b</em><sub><em>i</em></sub></span>
+，再相同则比较 <span
+class="math inline"><em>c</em><sub><em>i</em></sub></span> ……
+</details>
+<h2 id="一维偏序">一维偏序</h2>
+<blockquote>
+<p>给定一个数组，求在数组中比第<span
+class="math inline"><em>i</em></span>个元素小的元素个数。</p>
+</blockquote>
+<p>这个问题非常简单，只需要把数组排序再统计在它之前的元素个数就可以了。</p>
+<p>于是，我们知道了解偏序问题的第一个方法：排序。</p>
+<h2 id="二维偏序">二维偏序</h2>
+<blockquote>
+<p>给定两个数组<span class="math inline"><em>a</em></span>、<span
+class="math inline"><em>b</em></span>，求满足<span
+class="math inline"><em>a</em><sub><em>i</em></sub> &lt; <em>a</em><sub><em>j</em></sub> ∧ <em>b</em><sub><em>i</em></sub> &lt; <em>b</em><sub><em>j</em></sub></span>的二元组<span
+class="math inline">(<em>i</em>, <em>j</em>)</span>的数量。</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1908">例题一</a>
+这个问题中，有两个条件，显然不好搞，我们要想办法把他消掉一个条件。这就是做偏序问题通用的思想——降维。</p>
+<p>如何消条件呢？还记得刚才的第一个方法吗？我们可以先试试按照 <span
+class="math inline"><em>a</em></span> 排序。</p>
+<p>好的，已经排序完了，由于现在<span
+class="math inline"><em>a</em></span>单调递增，可以发现我们现在的问题是在求出满足
+<span
+class="math inline"><em>i</em> &lt; <em>j</em> ∧ <em>b</em><sub><em>i</em></sub> &lt; <em>b</em><sub><em>j</em></sub></span>
+的二元组 <span class="math inline">(<em>i</em>, <em>j</em>)</span>
+的数量。那这不就是个逆序对吗？</p>
+<p>求逆序对有两种方式，第一种是值域树状数组。于是，我们知道了解偏序问题的第二个方法：值域树状数组。</p>
+<p>显然，这个方式是容易扩展到高维的。只需要多套几层树状数组/线段树就可以了。但是二维树状数组的空间复杂度是
+<span
+class="math inline"><em>O</em>(<em>n</em>log<sup>2</sup><em>n</em>)</span>
+的，如果题目卡空间就没办法了。</p>
+<p>第二种方式是归并排序。</p>
+<p>归并排序是怎么做的？先递归处理 <span
+class="math inline">[<em>l</em>, <em>m</em><em>i</em><em>d</em>]</span>
+和 <span
+class="math inline">[<em>m</em><em>i</em><em>d</em> + 1, <em>r</em>]</span>
+，再将排序后的区间合并，合并时直接统计相反的数量就可以了。这么一看似乎不能扩展的样子。</p>
+<p>但是，还记得刚刚的树状数组吗？我为什么不能在记录答案的时候不直接加，而是丢到树状数组里把第三维也处理掉呢？这个就是三维偏序的事情了。</p>
+<h2 id="三维偏序">三维偏序</h2>
+<blockquote>
+<p>给定三个数组 <span class="math inline"><em>a</em></span> 、 <span
+class="math inline"><em>b</em></span> 、 <span
+class="math inline"><em>c</em></span> ，求满足 <span
+class="math inline"><em>a</em><sub><em>i</em></sub> &lt; <em>a</em><sub><em>j</em></sub> ∧ <em>b</em><sub><em>i</em></sub> &lt; <em>b</em><sub><em>j</em></sub> ∧ <em>c</em><sub><em>i</em></sub> &lt; <em>c</em><sub><em>j</em></sub></span>
+的二元组 <span class="math inline">(<em>i</em>, <em>j</em>)</span>
+的数量。</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3810">例题二</a>
+<del>显然，我们可以用二维树状数组 MLE 这个问题。</del></p>
+<p>我们能不能用归并排序解决这个问题呢？</p>
+<p>答案是可以的。</p>
+<p>如何实现呢？我们发现，普通的归并排序之所以只能处理二位偏序，是因为它先对一维排序，解决掉一维，然后递归操作，再将两边合并。而统计答案就是在合并的时候做的。显然，我们已经排序了一维，也就是不能再排序了，只能通过
+<span class="math inline"><em>a</em></span> 的单调性解决第二维。</p>
+<p>事已至此，我们发现能用的好像都用了，还有什么能用的吗？</p>
+<p>还记得上一节最后的问题吗？我们可以把它丢到树状数组里处理呀！这样又能消掉一维。</p>
+<p>具体算法流程是这样的： 1. 按照<span
+class="math inline"><em>a</em></span>排序；</p>
+<ol start="2" type="1">
+<li><p>递归分治左右两边；</p></li>
+<li><p>用归并排序的方式合并：</p>
+<ol type="a">
+<li><p>如果左边的 <span class="math inline"><em>b</em></span> 小于右边的
+<span class="math inline"><em>b</em></span> ，说明可能合法，将 <span
+class="math inline"><em>c</em></span> 插到树状数组里；</p></li>
+<li><p>如果左边的 <span class="math inline"><em>b</em></span> 大于右边的
+<span class="math inline"><em>b</em></span>
+，说明不合法，只能统计在树状数组中比自己小的<span
+class="math inline"><em>c</em></span>的数量。</p></li>
+</ol></li>
+<li><p>更新 <span
+class="math inline"><em>a</em><sub><em>i</em></sub></span>
+的答案；</p></li>
+<li><p>清空树状数组。（这里不能直接 memset
+，时间会爆炸，只能全部反操作一遍）</p></li>
+</ol>
+<p>归并排序都被搞成这个样子了，显然不能叫归并排序了，于是，巨佬CDQ给起了个名字，叫CDQ分治。</p>
+<p>没错，这玩意就是CDQ分治。</p>
+<p>由于分治是 <span
+class="math inline"><em>O</em>(<em>n</em>log <em>n</em>)</span>
+的，树状数组是 <span
+class="math inline"><em>O</em>(log <em>n</em>)</span>
+的，所以CDQ分治解决三维偏序问题的时间是 <span
+class="math inline"><em>O</em>(<em>n</em>log<sup>2</sup><em>n</em>)</span>
+的。</p>
+<p>如果还看不懂，那就上代码吧。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Node</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> a,b,c,cnt,ans;</span><br><span class="line">	<span class="type">bool</span> <span class="keyword">operator</span>&lt;(<span class="type">const</span> Node&amp; x)<span class="type">const</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (a==x.a)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (b==x.b)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">return</span> c&lt;x.c;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">return</span> b&lt;x.b;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> a&lt;x.a;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function">vector&lt;Node&gt; <span class="title">a</span><span class="params">(<span class="number">1</span>)</span></span>;<span class="comment">//排序并去重后的a</span></span><br><span class="line">vector&lt;<span class="type">int</span>&gt; c,ans;<span class="comment">//c是树状数组，ans是记录的答案</span></span><br><span class="line"><span class="type">int</span> n,m,k;<span class="comment">//n，k均是题目输入，m是去重后的长度</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">lowbit</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> x&amp;-x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">update</span><span class="params">(<span class="type">int</span> pos,<span class="type">int</span> v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span> (pos&lt;=k)</span><br><span class="line">	&#123;</span><br><span class="line">		c[pos]+=v;</span><br><span class="line">		pos+=<span class="built_in">lowbit</span>(pos);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">query</span><span class="params">(<span class="type">int</span> pos)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> res=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (pos&gt;<span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		res+=c[pos];</span><br><span class="line">		pos-=<span class="built_in">lowbit</span>(pos);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">CDQ</span><span class="params">(<span class="type">int</span> l,<span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (l&gt;=r)<span class="comment">//这里都只剩一个元素了，直接返回</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> mid=l+(r-l)/<span class="number">2</span>;</span><br><span class="line">	<span class="built_in">CDQ</span>(l,mid);<span class="comment">//两边分治处理</span></span><br><span class="line">	<span class="built_in">CDQ</span>(mid<span class="number">+1</span>,r);</span><br><span class="line">	<span class="type">int</span> p1=l,p2=mid<span class="number">+1</span>;</span><br><span class="line">	vector&lt;Node&gt; temp;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i=l;i&lt;=r;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (p2&gt;r||(p1&lt;=mid&amp;&amp;a[p1].b&lt;=a[p2].b))<span class="comment">//左边b小于右边b，可以返回</span></span><br><span class="line">		&#123;</span><br><span class="line">			temp.<span class="built_in">push_back</span>(a[p1]);</span><br><span class="line">			<span class="built_in">update</span>(a[p1].c,a[p1].cnt);<span class="comment">//插到树状数组里</span></span><br><span class="line">			p1++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			temp.<span class="built_in">push_back</span>(a[p2]);</span><br><span class="line">			temp.<span class="built_in">back</span>().ans+=<span class="built_in">query</span>(a[p2].c);<span class="comment">//记录结果</span></span><br><span class="line">			p2++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i=l;i&lt;=mid;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">update</span>(a[i].c,-a[i].cnt);<span class="comment">//清空树状数组</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i=l;i&lt;=r;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		a[i]=temp[i-l];<span class="comment">//将答案传到a中</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>);</span><br><span class="line">	cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">	cin&gt;&gt;n&gt;&gt;k;</span><br><span class="line">	c.<span class="built_in">resize</span>(k<span class="number">+1</span>);</span><br><span class="line">	ans.<span class="built_in">resize</span>(n<span class="number">+1</span>);</span><br><span class="line">	<span class="function">vector&lt;Node&gt; <span class="title">temp</span><span class="params">(n<span class="number">+1</span>)</span></span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cin&gt;&gt;temp[i].a&gt;&gt;temp[i].b&gt;&gt;temp[i].c;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">sort</span>(temp.<span class="built_in">begin</span>()<span class="number">+1</span>,temp.<span class="built_in">end</span>());<span class="comment">//排序</span></span><br><span class="line">	a.<span class="built_in">push_back</span>(temp[<span class="number">1</span>]);</span><br><span class="line">	a[<span class="number">1</span>].cnt=<span class="number">1</span>;</span><br><span class="line">	m=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">2</span>;i&lt;=n;i++)<span class="comment">//去重</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (a[m].a!=temp[i].a||a[m].b!=temp[i].b||a[m].c!=temp[i].c)</span><br><span class="line">		&#123;</span><br><span class="line">			m++;</span><br><span class="line">			a.<span class="built_in">push_back</span>(temp[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		a[m].cnt++;</span><br><span class="line">	&#125;</span><br><span class="line">	m=a.<span class="built_in">size</span>()<span class="number">-1</span>;</span><br><span class="line">	<span class="built_in">CDQ</span>(<span class="number">1</span>,m);<span class="comment">//CDQ分治</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		ans[a[i].ans+a[i].cnt]+=a[i].cnt;<span class="comment">//更新结果（因为去重，所以要加偏移量）</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;ans[i]&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;<span class="comment">//输出</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="四维偏序">四维偏序</h2>
+<blockquote>
+<p>给定四个数组 <span class="math inline"><em>a</em></span> 、 <span
+class="math inline"><em>b</em></span> 、 <span
+class="math inline"><em>c</em></span> 、 <span
+class="math inline"><em>d</em></span> ，求满足 <span
+class="math inline"><em>a</em><sub><em>i</em></sub> &lt; <em>a</em><sub><em>j</em></sub> ∧ <em>b</em><sub><em>i</em></sub> &lt; <em>b</em><sub><em>j</em></sub> ∧ <em>c</em><sub><em>i</em></sub> &lt; <em>c</em><sub><em>j</em></sub> ∧ <em>d</em><sub><em>i</em></sub> &lt; <em>d</em><sub><em>j</em></sub></span>
+的二元组 <span class="math inline">(<em>i</em>, <em>j</em>)</span>
+的数量。</p>
+</blockquote>
+<p>经过前面的学习，我们大致发现，好像三个方法（排序，树状数组，CDQ分治）都是可以互相嵌套的。</p>
+<p>但是它们三个套在一起也才三维，想要解决四维偏序，必须想出新思路。</p>
+<p>它们能自我嵌套吗？</p>
+<p>首先，排序肯定不行，你不能多次排序。</p>
+<p>树状数组显然可以，但是空间耗得有点多。</p>
+<p>那问题来了，你能把CDQ分治嵌套吗？</p>
+<p>是可以的。因为每次CDQ分治，分治的对象都是不同的。</p>
+<p>排序之所以不能嵌套，是因为每次操作的对象都是所有数组，你操作第二次的时候就把第一次覆盖掉了。</p>
+<p>而CDQ分治第一次分治 <span class="math inline"><em>b</em></span>
+，第二次就分治 <span class="math inline"><em>c</em></span> ，分治 <span
+class="math inline"><em>c</em></span> 的过程不会改变数组 <span
+class="math inline"><em>b</em></span> ，所以可以嵌套。</p>
+<p>具体流程和三维偏序差不多，只是在分治完<span
+class="math inline"><em>b</em></span>之后再递归分治 <span
+class="math inline"><em>c</em></span> ，在分治 <span
+class="math inline"><em>c</em></span> 的时候将 <span
+class="math inline"><em>d</em></span> 丢进树状数组里。</p>
+<p>由三维偏序扩展一下，可以得到CDQ分治解 <span
+class="math inline"><em>k</em></span> 维偏序的时间复杂度是 <span
+class="math inline"><em>O</em>(<em>n</em>log<sup><em>k</em> − 1</sup><em>n</em>)</span>
+，换句话讲，CDQ顶多解四维偏序，再往上就没暴力跑的快了。</p>
+<p>代码的话，不想写了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://cqbzzky.github.io/template/2026/01/07/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%91CDQ%E5%88%86%E6%B2%BB/" data-id="cuidhZlwy3pkWI0Jqrh0rWtrE" data-title="【数据结构】CDQ分治" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/template/tags/%E5%88%86%E6%B2%BB/" rel="tag">分治</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/template/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/template/tags/%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">高级数据结构</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-【图论】网络流" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/template/2026/01/05/%E3%80%90%E5%9B%BE%E8%AE%BA%E3%80%91%E7%BD%91%E7%BB%9C%E6%B5%81/" class="article-date">
+  <time class="dt-published" datetime="2026-01-05T05:09:07.000Z" itemprop="datePublished">2026-01-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/template/categories/%E7%AE%97%E6%B3%95/">算法</a>►<a class="article-category-link" href="/template/categories/%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/">图论</a>►<a class="article-category-link" href="/template/categories/%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E7%BD%91%E7%BB%9C%E6%B5%81/">网络流</a>►<a class="article-category-link" href="/template/categories/%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E7%BD%91%E7%BB%9C%E6%B5%81/%E6%9C%80%E5%A4%A7%E6%B5%81/">最大流</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/template/2026/01/05/%E3%80%90%E5%9B%BE%E8%AE%BA%E3%80%91%E7%BD%91%E7%BB%9C%E6%B5%81/">【图论】网络流</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="网络流是什么">网络流是什么？</h2>
+<p>网络流可以类比成一个水管网络，组成了一个有向图。有一个无限产水的神奇水厂，还有一个无限蓄水的神奇蓄水池。</p>
+<p>每个水管有单位时间的最大通过水量（水管也有粗细），要求一单位时间内神奇蓄水池最多能收到多少从神奇水厂过来的水。</p>
+<p>网络流中有如下定义：</p>
+<ul>
+<li><p>弧：就是图中的边，也就是水管。</p></li>
+<li><p>源点：水的起始点，也就是神奇水厂。</p></li>
+<li><p>汇点：水的终点，也就是神奇蓄水池。</p></li>
+<li><p>容量：一条边的单位时间最大通过水量。</p></li>
+<li><p>流量：这条边现在实际通过的水量。</p></li>
+<li><p>残量：容量减去流量。</p></li>
+<li><p>增广路径：一条从源点到汇点的路径，这条路径还没完全被占满，也就是路径上每一条边的残量都大于零。</p></li>
+<li><p>残量网络：这张图已经被水占据了一部分了，但还能找到增广路径。</p></li>
+</ul>
+<p>网络流还有两个约束：</p>
+<ul>
+<li><p>流量 <span class="math inline">≤</span> 容量。</p></li>
+<li><p>节点的流入量=流出量，即节点不会消耗水或产生水。</p></li>
+</ul>
+<p>知道了这些之后，我们就可以开始求网络流了 。</p>
+<h2 id="最大流">最大流</h2>
+<h3 id="基于增广路径的最大流算法">基于增广路径的最大流算法</h3>
+<h4 id="ford-fulkersonff-算法">Ford-Fulkerson(FF) 算法</h4>
+<p>如果我们想要求最大流，最直接的办法是什么？</p>
+<p>显然是直接暴力搜索所有增广路径。</p>
+<p>但是这样做有可能出现“一步走错了，后面全部搜不到最优解”的情况。</p>
+<p>为了避免这种情况，我们可以对每一条边建反向边，反向边初始容量为 <span
+class="math inline">0</span> 。</p>
+<p>如果走了正向边且流量为 <span class="math inline"><em>m</em></span>
+，则反向边的容量就 <span class="math inline">+<em>m</em></span>
+，反之亦然。</p>
+<p>这样等于说，如果我走错了，后面的路径可以反着走，也就是帮我把走错的水送回来，也就实现了一个“反悔操作”了。</p>
+<p>这时候就有人会说了：“我如果先走一次正向边，再走一次反向边，再走一次正向边…它会不会死循环？”</p>
+<p>不会，因为一个网络流的最大流是有限的，我每次找到增广路径至少都会使答案
+<span class="math inline">+1</span>
+，经过有限次操作一定能找到最大流。</p>
+<p>于是我们就找到了第一个求最大流的算法。这个算法的时间复杂度是 <span
+class="math inline"><em>O</em>(<em>E</em> * <em>m</em><em>a</em><em>x</em><em>f</em><em>l</em><em>o</em><em>w</em>)</span>
+的，证明过程同上“我每次找到增广路径至少都会使答案 <span
+class="math inline">+1</span> 。</p>
+<p>这个算法的时间复杂度依赖于 <span
+class="math inline"><em>m</em><em>a</em><em>x</em><em>f</em><em>l</em><em>o</em><em>w</em></span>
+，那如果题目给你一张容量上限 <span
+class="math inline">10<sup>18</sup></span> 的图， FF 算法就炸了。</p>
+<p>代码： <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//其实似乎不需要代码</span></span><br></pre></td></tr></table></figure></p>
+<p>于是，我们来想一下这个算法的局限性在什么地方？</p>
+<h4 id="edmonds-karpek-算法">Edmonds-Karp(EK) 算法</h4>
+<p>来看这张图。</p>
+<p><img
+src="https://cdn.luogu.com.cn/upload/image_hosting/z4deasqf.png" /></p>
+<p>(借鉴<a
+target="_blank" rel="noopener" href="https://www.cnblogs.com/rmy020718">Manjusaka丶梦寒</a>的<a
+target="_blank" rel="noopener" href="https://www.cnblogs.com/rmy020718/p/9546071.html">网络流–最大流</a>)</p>
+<p>(其实是自己画的，但是实在和<a
+target="_blank" rel="noopener" href="https://www.cnblogs.com/rmy020718">Manjusaka丶梦寒</a>的长得太像了，有点说不过去)</p>
+<p>如果我先搜索 s -&gt; <span class="math inline">2</span> -&gt; <span
+class="math inline">3</span> -&gt; t ，再搜索 s -&gt; <span
+class="math inline">3</span> -&gt; <span class="math inline">2</span>
+-&gt; t ，再搜索 s -&gt; <span class="math inline">2</span> -&gt; <span
+class="math inline">3</span> -&gt; t … 就要搜 <span
+class="math inline">20000</span> 次才能搜出来。</p>
+<p>而如果我直接搜索 s -&gt; <span class="math inline">2</span> -&gt; t
+，再搜索 s -&gt; <span class="math inline">3</span> -&gt; t ，只需<span
+class="math inline">2</span>次就可以搜出来了。</p>
+<p>考虑优先搜索最短增广路。</p>
+<p>这样一来，时间复杂度可以证明是 <span
+class="math inline"><em>O</em>(<em>V</em><em>E</em><sup>2</sup>)</span>
+，具体见：<a
+target="_blank" rel="noopener" href="https://www.luogu.com.cn/article/yb4ncx1k">关于EK算法的时间复杂度证明</a>。</p>
+<p>代码： <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//正在学，之后再补</span></span><br></pre></td></tr></table></figure></p>
+<p>但是这样还是不够优，在稠密图中时间复杂度接近 <span
+class="math inline"><em>O</em>(<em>V</em><sup>5</sup>)</span> ，意味着
+<span class="math inline"><em>V</em></span> 最大取 <span
+class="math inline">40</span> ，太小了，考虑优化。</p>
+<h4 id="dinic-算法">Dinic 算法</h4>
+<h5 id="多路增广">多路增广</h5>
+<p>我们发现， EK 算法每算一条增广路就要跑一遍 BFS
+求最短路，极其浪费。</p>
+<p>我们可以一次性多搜几条增广路呢，一次 DFS
+就全部处理完了，非常高效。</p>
+<h5 id="分层处理">分层处理</h5>
+<p>我们刚才为了搜出所有增广路，用的是 DFS ，那就会出现环的问题。</p>
+<p>这个问题有一个很简单的解法：将每个节点赋一个高度值，必须满足 <span
+class="math inline"><em>x</em></span> 向 <span
+class="math inline"><em>x</em> − 1</span> 流的规则，这样就没有环了。</p>
+<p>但是如果这样做，就有可能出现一个节点本来可以流出，由于高度而被阻塞了。</p>
+<p>对于这个问题，我们可以直接暴力的对这个节点加高度，使它能够流出。</p>
+<h5 id="当前弧优化">当前弧优化</h5>
+<p>如果一条边之前 DFS
+时就已经被判成无效（即无法流通汇点），那我现在也不用去搜这条边（搜出来一定不合法）。</p>
+<h5 id="gap-优化">gap 优化</h5>
+<p>如果我跑到一半，突然发现高度为 <span
+class="math inline"><em>x</em></span>
+的节点已经没有了，那一定不会再有满足条件的增广路了，可以直接返回。</p>
+<p>注意，这里不是退出整个算法，而是退出当前 DFS ，开启下一轮 BFS 。</p>
+<p>为什么？因为水是从 <span class="math inline"><em>x</em></span> 流到
+<span class="math inline"><em>x</em> − 1</span>
+去的，如果中间出空缺了，那源点和汇点一定不连通。</p>
+<p>这个优化看起来不咋样，实际上优化非常大，足以使这个算法通过洛谷模板题。</p>
+<p>代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//正在学，之后再补</span></span><br></pre></td></tr></table></figure>
+<h4 id="isap-算法">ISAP 算法</h4>
+<p>我们发现， Dinic 算法每做一个 DFS ，就要跑一次 BFS
+算高度，这是大大的浪费。</p>
+<p>考虑将 BFS 融入 DFS 中一并处理，直接在 DFS 对节点加高度。</p>
+<p>这样不用每次不必要的遍历全局，只是在需要的时候加高度，效率更高了。</p>
+<p>更好的是，如果找到 gap ，由于高度是由 DFS
+更新的，中间有缺口就搜不到低层节点，无法使其升高，无法填补空缺，永远也找不到增广路，可以直接退出整个算法，比
+Dinic 只退出 DFS 部分快多了。</p>
+<p>代码：</p>
+<p>这是一个简化版本，把 BFS 省去了，直接在一遍遍 DFS 失败时将 gap
+构建出来。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">edge</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> v,w,bk;</span><br><span class="line">&#125;;</span><br><span class="line">vector&lt;vector&lt;edge&gt;&gt; graph;</span><br><span class="line">vector&lt;<span class="type">int</span>&gt; gap,d;</span><br><span class="line"><span class="type">int</span> n,m,s,t,ans;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">DFS</span><span class="params">(<span class="type">int</span> u,<span class="type">int</span> flow)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> sum=<span class="number">0</span>,minn=n<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">if</span> (u==t)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> flow;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (edge&amp; i:graph[u])</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (i.w==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (d[u]==d[i.v]<span class="number">+1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> res=<span class="built_in">min</span>(flow-sum,i.w);</span><br><span class="line">            res=<span class="built_in">DFS</span>(i.v,res);</span><br><span class="line">            i.w-=res;</span><br><span class="line">            graph[i.v][i.bk].w+=res;</span><br><span class="line">            sum+=res;</span><br><span class="line">            <span class="keyword">if</span> (d[s]&gt;=n)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">return</span> sum;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (sum==flow)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        minn=<span class="built_in">min</span>(minn,d[i.v]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (sum==<span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        gap[d[u]]--;</span><br><span class="line">        <span class="keyword">if</span> (gap[d[u]]==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            d[s]=n;</span><br><span class="line">        &#125;</span><br><span class="line">        d[u]=minn<span class="number">+1</span>;</span><br><span class="line">        gap[d[u]]++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;m&gt;&gt;s&gt;&gt;t;</span><br><span class="line">    d.<span class="built_in">resize</span>(n<span class="number">+1</span>,<span class="number">0</span>);</span><br><span class="line">    gap.<span class="built_in">resize</span>(n<span class="number">+1</span>,<span class="number">0</span>);</span><br><span class="line">    graph.<span class="built_in">resize</span>(n<span class="number">+1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> u,v,w;</span><br><span class="line">        cin&gt;&gt;u&gt;&gt;v&gt;&gt;w;</span><br><span class="line">        graph[u].<span class="built_in">push_back</span>(&#123;v,w,(<span class="type">int</span>)graph[v].<span class="built_in">size</span>()&#125;);</span><br><span class="line">        graph[v].<span class="built_in">push_back</span>(&#123;u,<span class="number">0</span>,(<span class="type">int</span>)graph[u].<span class="built_in">size</span>()<span class="number">-1</span>&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    gap[<span class="number">0</span>]=n;</span><br><span class="line">    <span class="keyword">while</span> (d[s]&lt;n)</span><br><span class="line">    &#123;</span><br><span class="line">        ans+=<span class="built_in">DFS</span>(s,<span class="number">1e18</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;ans;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="基于预流推进的最大流算法">基于预流推进的最大流算法</h3>
+<h4 id="通用预流推进算法">通用预流推进算法</h4>
+<p>如果我们不用增广路，还有没有求最大流的方法？ 有。</p>
+<p>我们想象一下，如果一次性把所有管道都用水填满，会怎么样？</p>
+<p>水会全部堆积在各个节点处。那这就违反了网络流的第二条约束了。</p>
+<p>定义节点处堆积的水叫超额流，我们要想办法把超额流流出去，以满足约束。</p>
+<p>所以我们维护一个队列，存所有带有超额流的节点，其中源点的超额流为
+<span class="math inline">+∞</span> 。</p>
+<p>但是我们就会遇到和 Dinic
+算法多路增广一样的问题：如果两个点互相流水，一直流到 TLE 怎么办？</p>
+<p>于是我们采用和 Dinic 一样的解决方案：给每个节点开一个高度，满足<span
+class="math inline"><em>x</em></span>向<span
+class="math inline"><em>x</em> − 1</span>流的规则。</p>
+<p>如果某个点流不出去了，那就把它抬高度。</p>
+<p>代码： <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">edge</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> v,w,bk;</span><br><span class="line">&#125;;</span><br><span class="line">vector&lt;vector&lt;edge&gt;&gt; graph;</span><br><span class="line">vector&lt;<span class="type">bool</span>&gt; vis;</span><br><span class="line">vector&lt;<span class="type">int</span>&gt; h,w;</span><br><span class="line"><span class="type">int</span> n,m,s,t;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">BFS</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">fill</span>(h.<span class="built_in">begin</span>()<span class="number">+1</span>,h.<span class="built_in">end</span>(),<span class="number">1e18</span>);</span><br><span class="line">    h[t]=<span class="number">0</span>;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">bool</span>&gt; <span class="title">vis</span><span class="params">(n<span class="number">+1</span>,<span class="literal">false</span>)</span></span>;</span><br><span class="line">    queue&lt;<span class="type">int</span>&gt; q;</span><br><span class="line">    q.<span class="built_in">push</span>(t);</span><br><span class="line">    <span class="keyword">while</span> (!q.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> cur=q.<span class="built_in">front</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">for</span> (edge&amp; i:graph[cur])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (graph[i.v][i.bk].w!=<span class="number">0</span>&amp;&amp;h[cur]<span class="number">+1</span>&lt;h[i.v])</span><br><span class="line">            &#123;</span><br><span class="line">                h[i.v]=h[cur]<span class="number">+1</span>;</span><br><span class="line">                <span class="keyword">if</span> (!vis[i.v])</span><br><span class="line">                &#123;</span><br><span class="line">                    q.<span class="built_in">push</span>(i.v);</span><br><span class="line">                    vis[i.v]=<span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">relabel</span><span class="params">(<span class="type">int</span> u)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> minn=<span class="number">1e18</span>;</span><br><span class="line">    <span class="keyword">for</span> (edge&amp; i:graph[u])</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (i.w==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        minn=<span class="built_in">min</span>(minn,h[i.v]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(minn==<span class="number">1e18</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    h[u]=minn<span class="number">+1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">push_relabel</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">BFS</span>();</span><br><span class="line">    h[s]=n;</span><br><span class="line">    queue&lt;<span class="type">int</span>&gt; q;</span><br><span class="line">    <span class="keyword">for</span> (edge&amp; i:graph[s])</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (i.w==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> flow=i.w;</span><br><span class="line">        i.w=<span class="number">0</span>;</span><br><span class="line">        graph[i.v][i.bk].w+=flow;</span><br><span class="line">        w[s]-=flow;</span><br><span class="line">        w[i.v]+=flow;</span><br><span class="line">        <span class="keyword">if</span> (!vis[i.v]&amp;&amp;i.v!=s&amp;&amp;i.v!=t&amp;&amp;<span class="built_in">relabel</span>(i.v))</span><br><span class="line">        &#123;</span><br><span class="line">            q.<span class="built_in">push</span>(i.v);</span><br><span class="line">            vis[i.v]=<span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (!q.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> cur=q.<span class="built_in">front</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        vis[cur]=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (edge&amp; i:graph[cur])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (w[cur]==<span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (i.w==<span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (h[cur]==h[i.v]<span class="number">+1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="type">int</span> flow=<span class="built_in">min</span>(i.w,w[cur]);</span><br><span class="line">                i.w-=flow;</span><br><span class="line">                graph[i.v][i.bk].w+=flow;</span><br><span class="line">                w[cur]-=flow;</span><br><span class="line">                w[i.v]+=flow;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (w[i.v]!=<span class="number">0</span>&amp;&amp;i.v!=s&amp;&amp;i.v!=t&amp;&amp;!vis[i.v]&amp;&amp;<span class="built_in">relabel</span>(i.v))</span><br><span class="line">            &#123;</span><br><span class="line">                q.<span class="built_in">push</span>(i.v);</span><br><span class="line">                vis[i.v]=<span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (w[cur]&amp;&amp;!vis[cur]&amp;&amp;<span class="built_in">relabel</span>(cur))</span><br><span class="line">        &#123;</span><br><span class="line">            vis[cur]=<span class="literal">true</span>;</span><br><span class="line">            q.<span class="built_in">push</span>(cur);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> w[t];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;m&gt;&gt;s&gt;&gt;t;</span><br><span class="line">    h.<span class="built_in">resize</span>(n<span class="number">+1</span>);</span><br><span class="line">    w.<span class="built_in">resize</span>(n<span class="number">+1</span>);</span><br><span class="line">    vis.<span class="built_in">resize</span>(n<span class="number">+1</span>);</span><br><span class="line">    graph.<span class="built_in">resize</span>(n<span class="number">+1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> u,v,w;</span><br><span class="line">        cin&gt;&gt;u&gt;&gt;v&gt;&gt;w;</span><br><span class="line">        graph[u].<span class="built_in">push_back</span>(&#123;v,w,(<span class="type">int</span>)graph[v].<span class="built_in">size</span>()&#125;);</span><br><span class="line">        graph[v].<span class="built_in">push_back</span>(&#123;u,<span class="number">0</span>,(<span class="type">int</span>)graph[u].<span class="built_in">size</span>()<span class="number">-1</span>&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;<span class="built_in">push_relabel</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> 这样做的时间复杂度是 <span
+class="math inline"><em>O</em>(<em>V</em><sup>2</sup><em>E</em>)</span>
+的，跟 Dinic 差不多，考虑优化。</p>
+<p>还有一个比较奇特的优化。刚才我们是拿队列来跑的，把它改成栈就能够快一些，<del>我也不知道为什么。</del></p>
+<h4 id="最高标号预流推进算法">最高标号预流推进算法</h4>
+<p>也就是把刚才的队列、栈改成对高度的优先队列。这个优化实际上非常强大，可以把理论复杂度优化到
+<span class="math inline">$O(V\sqrt{E})$</span> ，具体见：<a
+target="_blank" rel="noopener" href="https://dl.acm.org/doi/epdf/10.1145/290179.290181">锻炼一下英语水平</a></p>
+<p>如果你真的阅读了，你会发现，截止 <span
+class="math inline">1998</span> 年，已经有 <span
+class="math inline">20</span> 种最大流算法了。</p>
+<p>代码： <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">edge</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> v,w,bk;</span><br><span class="line">&#125;;</span><br><span class="line">vector&lt;vector&lt;edge&gt;&gt; graph;</span><br><span class="line">vector&lt;<span class="type">bool</span>&gt; vis;</span><br><span class="line">vector&lt;<span class="type">int</span>&gt; h,w;</span><br><span class="line"><span class="type">int</span> n,m,s,t;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">cmp</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> y)</span><span class="type">const</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> h[x]&lt;h[y];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">BFS</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">fill</span>(h.<span class="built_in">begin</span>()<span class="number">+1</span>,h.<span class="built_in">end</span>(),<span class="number">1e18</span>);</span><br><span class="line">    h[t]=<span class="number">0</span>;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">bool</span>&gt; <span class="title">vis</span><span class="params">(n<span class="number">+1</span>,<span class="literal">false</span>)</span></span>;</span><br><span class="line">    queue&lt;<span class="type">int</span>&gt; q;</span><br><span class="line">    q.<span class="built_in">push</span>(t);</span><br><span class="line">    <span class="keyword">while</span> (!q.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> cur=q.<span class="built_in">front</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">for</span> (edge&amp; i:graph[cur])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (graph[i.v][i.bk].w!=<span class="number">0</span>&amp;&amp;h[cur]<span class="number">+1</span>&lt;h[i.v])</span><br><span class="line">            &#123;</span><br><span class="line">                h[i.v]=h[cur]<span class="number">+1</span>;</span><br><span class="line">                <span class="keyword">if</span> (!vis[i.v])</span><br><span class="line">                &#123;</span><br><span class="line">                    q.<span class="built_in">push</span>(i.v);</span><br><span class="line">                    vis[i.v]=<span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">relabel</span><span class="params">(<span class="type">int</span> u)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> minn=<span class="number">1e18</span>;</span><br><span class="line">    <span class="keyword">for</span> (edge&amp; i:graph[u])</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (i.w==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        minn=<span class="built_in">min</span>(minn,h[i.v]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(minn==<span class="number">1e18</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    h[u]=minn<span class="number">+1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">push_relabel</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">BFS</span>();</span><br><span class="line">    h[s]=n;</span><br><span class="line">    priority_queue&lt;<span class="type">int</span>,vector&lt;<span class="type">int</span>&gt;,cmp&gt; q;</span><br><span class="line">    <span class="keyword">for</span> (edge&amp; i:graph[s])</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (i.w==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> flow=i.w;</span><br><span class="line">        i.w=<span class="number">0</span>;</span><br><span class="line">        graph[i.v][i.bk].w+=flow;</span><br><span class="line">        w[s]-=flow;</span><br><span class="line">        w[i.v]+=flow;</span><br><span class="line">        <span class="keyword">if</span> (!vis[i.v]&amp;&amp;i.v!=s&amp;&amp;i.v!=t&amp;&amp;<span class="built_in">relabel</span>(i.v))</span><br><span class="line">        &#123;</span><br><span class="line">            q.<span class="built_in">push</span>(i.v);</span><br><span class="line">            vis[i.v]=<span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (!q.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> cur=q.<span class="built_in">top</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        vis[cur]=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (edge&amp; i:graph[cur])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (w[cur]==<span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (i.w==<span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (h[cur]==h[i.v]<span class="number">+1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="type">int</span> flow=<span class="built_in">min</span>(i.w,w[cur]);</span><br><span class="line">                i.w-=flow;</span><br><span class="line">                graph[i.v][i.bk].w+=flow;</span><br><span class="line">                w[cur]-=flow;</span><br><span class="line">                w[i.v]+=flow;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (w[i.v]!=<span class="number">0</span>&amp;&amp;i.v!=s&amp;&amp;i.v!=t&amp;&amp;!vis[i.v]&amp;&amp;<span class="built_in">relabel</span>(i.v))</span><br><span class="line">            &#123;</span><br><span class="line">                q.<span class="built_in">push</span>(i.v);</span><br><span class="line">                vis[i.v]=<span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (w[cur]&amp;&amp;!vis[cur]&amp;&amp;<span class="built_in">relabel</span>(cur))</span><br><span class="line">        &#123;</span><br><span class="line">            vis[cur]=<span class="literal">true</span>;</span><br><span class="line">            q.<span class="built_in">push</span>(cur);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> w[t];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;m&gt;&gt;s&gt;&gt;t;</span><br><span class="line">    h.<span class="built_in">resize</span>(n<span class="number">+1</span>);</span><br><span class="line">    w.<span class="built_in">resize</span>(n<span class="number">+1</span>);</span><br><span class="line">    vis.<span class="built_in">resize</span>(n<span class="number">+1</span>);</span><br><span class="line">    graph.<span class="built_in">resize</span>(n<span class="number">+1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> u,v,w;</span><br><span class="line">        cin&gt;&gt;u&gt;&gt;v&gt;&gt;w;</span><br><span class="line">        graph[u].<span class="built_in">push_back</span>(&#123;v,w,(<span class="type">int</span>)graph[v].<span class="built_in">size</span>()&#125;);</span><br><span class="line">        graph[v].<span class="built_in">push_back</span>(&#123;u,<span class="number">0</span>,(<span class="type">int</span>)graph[u].<span class="built_in">size</span>()<span class="number">-1</span>&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;<span class="built_in">push_relabel</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+非常震惊的是，这么丑陋的代码，甚至没有用链式前向星，居然就过了洛谷的加强版……</p>
+<h4 id="gap-优化-1">gap 优化</h4>
+<p>和 Dinic 的 gap 优化差不多，但是 Dinic 是直接退出， gap
+是直接把当前高度设为 <span class="math inline"><em>n</em></span>
+，超额流会倒流回源点。</p>
+<p>代码： <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">edge</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> v,w,bk;</span><br><span class="line">&#125;;</span><br><span class="line">vector&lt;vector&lt;edge&gt;&gt; graph;</span><br><span class="line">vector&lt;<span class="type">int</span>&gt; h,w,gap;</span><br><span class="line">vector&lt;<span class="type">bool</span>&gt; vis;</span><br><span class="line"><span class="type">int</span> n,m,s,t;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">cmp</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> y)</span><span class="type">const</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> h[x]&lt;h[y];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">BFS</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">fill</span>(h.<span class="built_in">begin</span>()<span class="number">+1</span>,h.<span class="built_in">end</span>(),<span class="number">1e18</span>);</span><br><span class="line">    h[t]=<span class="number">0</span>;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">bool</span>&gt; <span class="title">vis</span><span class="params">(n<span class="number">+1</span>,<span class="literal">false</span>)</span></span>;</span><br><span class="line">    queue&lt;<span class="type">int</span>&gt; q;</span><br><span class="line">    q.<span class="built_in">push</span>(t);</span><br><span class="line">    <span class="keyword">while</span> (!q.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> cur=q.<span class="built_in">front</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">for</span> (edge&amp; i:graph[cur])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (graph[i.v][i.bk].w!=<span class="number">0</span>&amp;&amp;h[cur]<span class="number">+1</span>&lt;h[i.v])</span><br><span class="line">            &#123;</span><br><span class="line">                h[i.v]=h[cur]<span class="number">+1</span>;</span><br><span class="line">                <span class="keyword">if</span> (!vis[i.v])</span><br><span class="line">                &#123;</span><br><span class="line">                    q.<span class="built_in">push</span>(i.v);</span><br><span class="line">                    vis[i.v]=<span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">relabel</span><span class="params">(<span class="type">int</span> u)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    h[u]=<span class="number">1e18</span>;</span><br><span class="line">    <span class="keyword">for</span> (edge&amp; i:graph[u])</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (i.w==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        h[u]=<span class="built_in">min</span>(h[u],h[i.v]<span class="number">+1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">push_relabel</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">BFS</span>();</span><br><span class="line">    <span class="keyword">if</span> (h[s]==<span class="number">1e18</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    h[s]=n;</span><br><span class="line">    priority_queue&lt;<span class="type">int</span>,vector&lt;<span class="type">int</span>&gt;,cmp&gt; q;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(h[i]&lt;<span class="number">1e18</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            gap[h[i]]++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (edge&amp; i:graph[s])</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (i.w==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> flow=i.w;</span><br><span class="line">        i.w=<span class="number">0</span>;</span><br><span class="line">        graph[i.v][i.bk].w+=flow;</span><br><span class="line">        w[s]-=flow;</span><br><span class="line">        w[i.v]+=flow;</span><br><span class="line">        <span class="keyword">if</span> (!vis[i.v]&amp;&amp;i.v!=s&amp;&amp;i.v!=t)</span><br><span class="line">        &#123;</span><br><span class="line">            q.<span class="built_in">push</span>(i.v);</span><br><span class="line">            vis[i.v]=<span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (!q.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> cur=q.<span class="built_in">top</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        vis[cur]=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (edge&amp; i:graph[cur])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (i.w!=<span class="number">0</span>&amp;&amp;h[cur]==h[i.v]<span class="number">+1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="type">int</span> flow=<span class="built_in">min</span>(i.w,w[cur]);</span><br><span class="line">                i.w-=flow;</span><br><span class="line">                graph[i.v][i.bk].w+=flow;</span><br><span class="line">                w[cur]-=flow;</span><br><span class="line">                w[i.v]+=flow;</span><br><span class="line">                <span class="keyword">if</span> (w[i.v]!=<span class="number">0</span>&amp;&amp;i.v!=s&amp;&amp;i.v!=t&amp;&amp;!vis[i.v])</span><br><span class="line">                &#123;</span><br><span class="line">                    q.<span class="built_in">push</span>(i.v);</span><br><span class="line">                    vis[i.v]=<span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (w[cur]==<span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (w[cur]&amp;&amp;h[cur]&lt;=n<span class="number">+1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            gap[h[cur]]--;</span><br><span class="line">            <span class="keyword">if</span> (gap[h[cur]]==<span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span> (h[i]&gt;h[cur]&amp;&amp;i!=s&amp;&amp;i!=t&amp;&amp;h[i]&lt;n<span class="number">+1</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                        h[i]=n<span class="number">+1</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">relabel</span>(cur);</span><br><span class="line">            gap[h[cur]]++;</span><br><span class="line">            vis[cur]=<span class="literal">true</span>;</span><br><span class="line">            q.<span class="built_in">push</span>(cur);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> w[t];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;m&gt;&gt;s&gt;&gt;t;</span><br><span class="line">    h.<span class="built_in">resize</span>(n<span class="number">+1</span>);</span><br><span class="line">    w.<span class="built_in">resize</span>(n<span class="number">+1</span>);</span><br><span class="line">    vis.<span class="built_in">resize</span>(n<span class="number">+1</span>);</span><br><span class="line">    gap.<span class="built_in">resize</span>(n<span class="number">+4</span>);</span><br><span class="line">    graph.<span class="built_in">resize</span>(n<span class="number">+1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> u,v,w;</span><br><span class="line">        cin&gt;&gt;u&gt;&gt;v&gt;&gt;w;</span><br><span class="line">        graph[u].<span class="built_in">push_back</span>(&#123;v,w,(<span class="type">int</span>)graph[v].<span class="built_in">size</span>()&#125;);</span><br><span class="line">        graph[v].<span class="built_in">push_back</span>(&#123;u,<span class="number">0</span>,(<span class="type">int</span>)graph[u].<span class="built_in">size</span>()<span class="number">-1</span>&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;<span class="built_in">push_relabel</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+经过了这些优化，你会发现，这个算法的理论时间复杂度已经小于<span
+class="math inline"><em>D</em><em>i</em><em>n</em><em>i</em><em>c</em></span>，但是由于
+Dinic 及 ISAP
+过于好写且常数过于小，所以后者仍是算法竞赛最常用的最大流算法之一。</p>
+<h2 id="参考文献">参考文献</h2>
+<p><a
+target="_blank" rel="noopener" href="https://www.cnblogs.com/rmy020718/p/9546071.html">网络流–最大流</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://www.cnblogs.com/linzhengmin/p/9313216.html">[算法]网络最大流Dinic</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://www.cnblogs.com/Xing-Ling/p/11487554.html">【学习笔记】网络流算法简单入门</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://www.cnblogs.com/zsboy/archive/2013/01/27/2878810.html">网络流—最大流（Edmond-Karp算法）</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://www.cnblogs.com/xiaopangfeiyu/p/17219977.html">从通用预流推进到先进先出预流推进、HLPP、EXCESS
+SCALING</a></p>
+<p>在写博客时使用了 deepseek
+和豆包学习算法流程和时间复杂度证明。<del>我不会告诉你我本来只会 ISAP
+。</del></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://cqbzzky.github.io/template/2026/01/05/%E3%80%90%E5%9B%BE%E8%AE%BA%E3%80%91%E7%BD%91%E7%BB%9C%E6%B5%81/" data-id="cuidKq_y1rJzX25CQ51bAHCrE" data-title="【图论】网络流" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/template/tags/%E5%9B%BE%E8%AE%BA/" rel="tag">图论</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/template/tags/%E6%9C%80%E5%A4%A7%E6%B5%81/" rel="tag">最大流</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/template/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/" rel="tag">网络流</a></li></ul>
+
     </footer>
   </div>
   
@@ -383,12 +1535,33 @@ html.light [class^="hexo-tips-"] {
           <aside id="sidebar">
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/template/categories/%E6%95%B0%E5%AD%A6/">数学</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/template/categories/%E6%95%B0%E5%AD%A6/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/template/categories/%E7%AE%97%E6%B3%95/">算法</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/template/categories/%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/">图论</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/template/categories/%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E4%BA%8C%E5%88%86%E5%9B%BE/">二分图</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/template/categories/%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E4%BA%8C%E5%88%86%E5%9B%BE/%E9%9C%8D%E5%B0%94%E5%AE%9A%E7%90%86/">霍尔定理</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/template/categories/%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E6%A0%91/">树</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/template/categories/%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E6%A0%91/%E6%A0%91%E4%B8%8A%E5%90%AF%E5%8F%91%E5%BC%8F%E5%90%88%E5%B9%B6/">树上启发式合并</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/template/categories/%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E7%BD%91%E7%BB%9C%E6%B5%81/">网络流</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/template/categories/%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E7%BD%91%E7%BB%9C%E6%B5%81/%E6%9C%80%E5%A4%A7%E6%B5%81/">最大流</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/template/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/template/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%B3%E8%A1%A1%E6%A0%91/">平衡树</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/template/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%B3%E8%A1%A1%E6%A0%91/%E7%AC%9B%E5%8D%A1%E5%B0%94%E6%A0%91/">笛卡尔树</a></li></ul></li></ul></li></ul></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/template/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/" rel="tag">二分图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/template/tags/%E5%88%86%E6%B2%BB/" rel="tag">分治</a></li><li class="tag-list-item"><a class="tag-list-link" href="/template/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E5%90%88%E5%B9%B6/" rel="tag">启发式合并</a></li><li class="tag-list-item"><a class="tag-list-link" href="/template/tags/%E5%9B%BE%E8%AE%BA/" rel="tag">图论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/template/tags/%E5%B9%B3%E8%A1%A1%E6%A0%91/" rel="tag">平衡树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/template/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/template/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/template/tags/%E6%9C%80%E5%A4%A7%E6%B5%81/" rel="tag">最大流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/template/tags/%E6%A0%91/" rel="tag">树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/template/tags/%E7%AC%9B%E5%8D%A1%E5%B0%94%E6%A0%91/" rel="tag">笛卡尔树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/template/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag">线性代数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/template/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/" rel="tag">网络流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/template/tags/%E9%9C%8D%E5%B0%94%E5%AE%9A%E7%90%86/" rel="tag">霍尔定理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/template/tags/%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">高级数据结构</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/template/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/" style="font-size: 10px;">二分图</a> <a href="/template/tags/%E5%88%86%E6%B2%BB/" style="font-size: 10px;">分治</a> <a href="/template/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E5%90%88%E5%B9%B6/" style="font-size: 10px;">启发式合并</a> <a href="/template/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 20px;">图论</a> <a href="/template/tags/%E5%B9%B3%E8%A1%A1%E6%A0%91/" style="font-size: 10px;">平衡树</a> <a href="/template/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 10px;">数学</a> <a href="/template/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 15px;">数据结构</a> <a href="/template/tags/%E6%9C%80%E5%A4%A7%E6%B5%81/" style="font-size: 10px;">最大流</a> <a href="/template/tags/%E6%A0%91/" style="font-size: 10px;">树</a> <a href="/template/tags/%E7%AC%9B%E5%8D%A1%E5%B0%94%E6%A0%91/" style="font-size: 10px;">笛卡尔树</a> <a href="/template/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 10px;">线性代数</a> <a href="/template/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/" style="font-size: 10px;">网络流</a> <a href="/template/tags/%E9%9C%8D%E5%B0%94%E5%AE%9A%E7%90%86/" style="font-size: 10px;">霍尔定理</a> <a href="/template/tags/%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">高级数据结构</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
@@ -407,7 +1580,23 @@ html.light [class^="hexo-tips-"] {
       <ul>
         
           <li>
-            <a href="/template/2026/01/09/hello-world/">Hello World</a>
+            <a href="/template/2026/01/07/%E3%80%90%E6%95%B0%E5%AD%A6%E3%80%91%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%85%A5%E9%97%A8/">【数学】线性代数入门</a>
+          </li>
+        
+          <li>
+            <a href="/template/2026/01/07/%E3%80%90%E5%9B%BE%E8%AE%BA%E3%80%91%E9%9C%8D%E5%B0%94%EF%BC%88Hall%EF%BC%89%E5%AE%9A%E7%90%86/">【图论】霍尔（Hall）定理</a>
+          </li>
+        
+          <li>
+            <a href="/template/2026/01/07/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%91%E7%AC%9B%E5%8D%A1%E5%B0%94%E6%A0%91/">【数据结构】笛卡尔树</a>
+          </li>
+        
+          <li>
+            <a href="/template/2026/01/07/%E3%80%90%E5%9B%BE%E8%AE%BA%E3%80%91%E6%A0%91%E4%B8%8A%E5%90%AF%E5%8F%91%E5%BC%8F%E5%90%88%E5%B9%B6%EF%BC%88DSU-on-tree%EF%BC%89/">【图论】树上启发式合并（DSU on tree）</a>
+          </li>
+        
+          <li>
+            <a href="/template/2026/01/07/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%91CDQ%E5%88%86%E6%B2%BB/">【数据结构】CDQ分治</a>
           </li>
         
       </ul>
